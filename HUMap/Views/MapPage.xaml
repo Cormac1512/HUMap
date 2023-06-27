@@ -1,9 +1,122 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:HUMap.ViewModels"
-			 x:Class="HUMap.Views.MapPage"
-			 x:DataType="vm:MapViewModel">
+﻿<?xml version="1.0" encoding="utf-8"?>
 
-	<Map x:Name="TheMap" />
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HUMap.ViewModels"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             xmlns:maps1="clr-namespace:Microsoft.Maui.Maps;assembly=Microsoft.Maui.Maps"
+             x:Class="HUMap.Views.MapPage"
+             x:DataType="vm:MapViewModel">
+
+    <maps:Map IsZoomEnabled="True" IsScrollEnabled="True" MapType="Satellite" MapClicked="OnMapClicked" ClassId="map1">
+        <x:Arguments>
+            <maps1:MapSpan>
+                <x:Arguments>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771048</x:Double>
+                            <x:Double>-0.368417</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <x:Double>0.013</x:Double>
+                    <x:Double>0.013</x:Double>
+                </x:Arguments>
+            </maps1:MapSpan>
+        </x:Arguments>
+        <maps:Map.MapElements>
+            <maps:Polygon StrokeColor="#FF9900"
+                          StrokeWidth="8"
+                          FillColor="#88FF9900" ClassId="medMain">
+                <!-- Medical Main -->
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771282166214334</x:Double>
+                            <x:Double>-0.3707509519138782</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77123143938444</x:Double>
+                            <x:Double>-0.36991142047402126</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77084623051775</x:Double>
+                            <x:Double>-0.37002407326537756</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77085732711887</x:Double>
+                            <x:Double>-0.3707670451786056</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <maps:Polygon StrokeColor="#FF9900"
+                          StrokeWidth="8"
+                          FillColor="#88FF9900" ClassId="library">
+                <!-- Library -->
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771231439385176</x:Double>
+                            <x:Double>-0.3696002842426523</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77127424015283</x:Double>
+                            <x:Double>-0.3694225879048771</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77125244347157</x:Double>
+                            <x:Double>-0.36886401786541934</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771317437178794</x:Double>
+                            <x:Double>-0.3688774289107845</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771298414640746</x:Double>
+                            <x:Double>-0.36849923743148794</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77077172469522</x:Double>
+                            <x:Double>-0.3685548932697532</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77078916224087</x:Double>
+                            <x:Double>-0.3690403731119709</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77087317940474</x:Double>
+                            <x:Double>-0.3690591485754821</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77089854304381</x:Double>
+                            <x:Double>-0.3696385057352556</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+        </maps:Map.MapElements>
+    </maps:Map>
 </ContentPage>

@@ -3,6 +3,6 @@
 [QueryProperty(nameof(Item), "Item")]
 public partial class TimetableDetailViewModel : BaseViewModel
 {
-	[ObservableProperty]
-	SampleItem item;
+    [ObservableProperty]
+    private TimetableItem item;
 }

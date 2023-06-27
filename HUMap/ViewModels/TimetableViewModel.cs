@@ -2,56 +2,56 @@
 
 public partial class TimetableViewModel : BaseViewModel
 {
-	readonly SampleDataService dataService;
+    private readonly TimetableService dataService;
 
-	[ObservableProperty]
-	bool isRefreshing;
+    [ObservableProperty]
+    private bool isRefreshing;
 
-	[ObservableProperty]
-	ObservableCollection<SampleItem> items;
+    [ObservableProperty]
+    private ObservableCollection<TimetableItem> items;
 
-	public TimetableViewModel(SampleDataService service)
-	{
-		dataService = service;
-	}
+    public TimetableViewModel(TimetableService service)
+    {
+        dataService = service;
+    }
 
-	[RelayCommand]
-	private async void OnRefreshing()
-	{
-		IsRefreshing = true;
+    [RelayCommand]
+    private async void OnRefreshing()
+    {
+        IsRefreshing = true;
 
-		try
-		{
-			await LoadDataAsync();
-		}
-		finally
-		{
-			IsRefreshing = false;
-		}
-	}
+        try
+        {
+            await LoadDataAsync();
+        }
+        finally
+        {
+            IsRefreshing = false;
+        }
+    }
 
-	[RelayCommand]
-	public async Task LoadMore()
-	{
-		var items = await dataService.GetItems();
+    [RelayCommand]
+    public async Task LoadMore()
+    {
+        var items = await dataService.GetItems();
 
-		foreach (var item in items)
-		{
-			Items.Add(item);
-		}
-	}
+        foreach (var item in items)
+        {
+            Items.Add(item);
+        }
+    }
 
-	public async Task LoadDataAsync()
-	{
-		Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
-	}
+    public async Task LoadDataAsync()
+    {
+        Items = new ObservableCollection<TimetableItem>(await dataService.GetItems());
+    }
 
-	[RelayCommand]
-	private async void GoToDetails(SampleItem item)
-	{
-		await Shell.Current.GoToAsync(nameof(TimetableDetailPage), true, new Dictionary<string, object>
-		{
-			{ "Item", item }
-		});
-	}
+    [RelayCommand]
+    private async void GoToDetails(TimetableItem item)
+    {
+        await Shell.Current.GoToAsync(nameof(TimetableDetailPage), true, new Dictionary<string, object>
+        {
+            { "Item", item }
+        });
+    }
 }

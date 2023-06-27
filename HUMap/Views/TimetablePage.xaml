@@ -8,7 +8,7 @@
 	<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
 		<CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
 			<CollectionView.ItemTemplate>
-				<DataTemplate x:DataType="m:SampleItem">
+				<DataTemplate x:DataType="m:TimetableItem">
 					<Frame Margin="4" Padding="12">
 						<Frame.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TimetableViewModel}}, Path=GoToDetailsCommand}" CommandParameter="{Binding .}" />
