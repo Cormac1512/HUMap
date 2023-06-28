@@ -17,7 +17,8 @@ public class TimetableService
         var path = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
         if (!File.Exists(Path.Combine(FileSystem.AppDataDirectory, "cal.ics")))
         {
-            const string fileUrl = "https://mytimetable.hull.ac.uk/ical?649c351a&group=false&eu=NjYwMjg0&h=RA6Kkai83GpoDHCJ7VmSQdXbrmDCLe0_5VWn0iTqNhs=";
+            const string fileUrl =
+                "https://mytimetable.hull.ac.uk/ical?649c351a&group=false&eu=NjYwMjg0&h=RA6Kkai83GpoDHCJ7VmSQdXbrmDCLe0_5VWn0iTqNhs=";
             await DownloadFile(fileUrl, path);
         }
 
@@ -33,10 +34,18 @@ public class TimetableService
 
         return calendar.Events
             .Where(cal => DateOnly.FromDateTime(cal.Start.AsSystemLocal.Date) >= today) // Filter out past events
-            .Select(cal => new TimetableItem
+            .Select(cal =>
             {
-                Title = cal.Summary[..cal.Summary.IndexOf(delimiter)],
-                Description = cal.Description
+                var startIndex = cal.Summary.IndexOf('[') + 1;
+                var endIndex = cal.Summary.IndexOf(']');
+                var type = cal.Summary.Substring(startIndex, endIndex - startIndex);
+
+                return new TimetableItem
+                {
+                    Title = cal.Summary[..cal.Summary.IndexOf(delimiter)],
+                    Description = cal.Description,
+                    Type = type
+                };
             })
             .ToList();
     }

@@ -17,12 +17,12 @@
             Icon="iconmap.png"
             ContentTemplate="{DataTemplate views:MapPage}" />
         <ShellContent
-            Title="About"
-            Icon="information.png"
-            ContentTemplate="{DataTemplate views:AboutPage}" />
-        <ShellContent
             Title="Settings"
             Icon="cog.png"
             ContentTemplate="{DataTemplate views:SettingsPage}" />
+        <ShellContent
+            Title="About"
+            Icon="information.png"
+            ContentTemplate="{DataTemplate views:AboutPage}" />
     </TabBar>
 </Shell>
