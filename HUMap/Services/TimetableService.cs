@@ -2,23 +2,42 @@
 
 public class TimetableService
 {
+    private static async Task DownloadFile(string fileUrl, string destinationPath)
+    {
+        using var client = new HttpClient();
+        using var response = await client.GetAsync(fileUrl);
+        using var content = response.Content;
+        await using var stream = await content.ReadAsStreamAsync();
+        await using var fileStream = File.Create(destinationPath);
+        await stream.CopyToAsync(fileStream);
+    }
+
     public async Task<IEnumerable<TimetableItem>> GetItems()
     {
-        await Task.Delay(1000); // Artifical delay to give the impression of work
-
-        var random = new Random().Next();
-
-        var result = new List<TimetableItem>();
-
-        for (var i = 0; i < 40; i++)
+        var path = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
+        if (!File.Exists(Path.Combine(FileSystem.AppDataDirectory, "cal.ics")))
         {
-            result.Add(new TimetableItem
-            {
-                Title = $"Item {random}-{i}",
-                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna etiam tempor orci eu. Proin libero nunc consequat interdum varius. Vitae congue mauris rhoncus aenean vel elit. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Pellentesque habitant morbi tristique senectus et netus. Tempus quam pellentesque nec nam aliquam sem et. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Leo vel orci porta non. Interdum velit laoreet id donec ultrices. Nulla facilisi cras fermentum odio. Nulla at volutpat diam ut. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Mauris nunc congue nisi vitae. Consequat id porta nibh venenatis cras. Malesuada fames ac turpis egestas integer eget. Pharetra sit amet aliquam id diam maecenas ultricies.\r\n\r\nHendrerit dolor magna eget est lorem ipsum dolor sit amet. Et pharetra pharetra massa massa ultricies mi quis. Felis bibendum ut tristique et egestas quis ipsum suspendisse. Enim sed faucibus turpis in eu mi bibendum neque. Eget nulla facilisi etiam dignissim diam quis enim. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Id aliquet lectus proin nibh nisl condimentum id. Et molestie ac feugiat sed. Fermentum posuere urna nec tincidunt. Eget felis eget nunc lobortis. Ut lectus arcu bibendum at varius vel. In cursus turpis massa tincidunt dui. Aliquam etiam erat velit scelerisque in dictum non consectetur a. Condimentum mattis pellentesque id nibh. Ridiculus mus mauris vitae ultricies leo. Et malesuada fames ac turpis egestas integer eget. Vitae tortor condimentum lacinia quis vel eros donec ac. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Sed turpis tincidunt id aliquet risus feugiat in ante."
-            });
+            const string fileUrl = "https://mytimetable.hull.ac.uk/ical?649c351a&group=false&eu=NjYwMjg0&h=RA6Kkai83GpoDHCJ7VmSQdXbrmDCLe0_5VWn0iTqNhs=";
+            await DownloadFile(fileUrl, path);
         }
 
-        return result;
+        var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
+        var file = new StreamReader(filepath);
+        var icsContent = await file.ReadToEndAsync();
+        var today = DateOnly.FromDateTime(DateTime.Now);
+        today = today.AddDays(-100);
+        file.Close();
+
+        var calendar = Ical.Net.Calendar.Load(icsContent);
+        const char delimiter = '[';
+
+        return calendar.Events
+            .Where(cal => DateOnly.FromDateTime(cal.Start.AsSystemLocal.Date) >= today) // Filter out past events
+            .Select(cal => new TimetableItem
+            {
+                Title = cal.Summary[..cal.Summary.IndexOf(delimiter)],
+                Description = cal.Description
+            })
+            .ToList();
     }
 }

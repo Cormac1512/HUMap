@@ -27,7 +27,7 @@
         <maps:Map.MapElements>
             <maps:Polygon StrokeColor="#FF9900"
                           StrokeWidth="8"
-                          FillColor="#88FF9900" ClassId="medMain">
+                          FillColor="#88FF9900" ClassId="Contains Zest cafe" AutomationId="Allam Medical Building">
                 <!-- Medical Main -->
                 <maps:Polygon.Geopath>
                     <sensors:Location>

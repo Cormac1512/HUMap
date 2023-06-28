@@ -1,10 +1,13 @@
 ﻿using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps.Handlers;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace HUMap.Views;
 
 public partial class MapPage : ContentPage
 {
+    private Polygon selected;
+
     public MapPage(MapViewModel viewModel)
     {
         InitializeComponent();
@@ -31,10 +34,17 @@ public partial class MapPage : ContentPage
         {
             var polygonCoordinates = polygon.Geopath;
             var isWithinPolygon = IsPointInPolygon(clickEventCoordinates, polygonCoordinates);
-            if (isWithinPolygon)
+            if (!isWithinPolygon) continue;
+            if (polygon == selected) continue;
+            polygon.FillColor = Color.FromArgb("#881BA1E2");
+            polygon.StrokeColor = Color.FromArgb("#681BA1E2");
+            if (selected != null)
             {
-                polygon.FillColor = Color.FromArgb("#881BA1E2");
+                selected.FillColor = Color.FromArgb("#88FF9900");
+                selected.StrokeColor = Color.FromArgb("#FF9900");
             }
+            selected = polygon;
+            DisplayAlert(selected.AutomationId, selected.ClassId, "OK");
         }
     }
 
