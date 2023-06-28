@@ -31,20 +31,23 @@ public class TimetableService
 
         var calendar = Ical.Net.Calendar.Load(icsContent);
         const char delimiter = '[';
-
+        var date = DateTime.Now.ToString("dddd");
         return calendar.Events
             .Where(cal => DateOnly.FromDateTime(cal.Start.AsSystemLocal.Date) >= today) // Filter out past events
             .Select(cal =>
             {
                 var startIndex = cal.Summary.IndexOf('[') + 1;
                 var endIndex = cal.Summary.IndexOf(']');
-                var type = cal.Summary.Substring(startIndex, endIndex - startIndex);
+                var lType = cal.Summary.Substring(startIndex, endIndex - startIndex);
 
                 return new TimetableItem
                 {
                     Title = cal.Summary[..cal.Summary.IndexOf(delimiter)],
                     Description = cal.Description,
-                    Type = type
+                    lType = lType,
+                    Location = cal.Location,
+                    StartTime = cal.Start.AsSystemLocal.ToString("HH:mm"),
+                    EndTime = cal.End.AsSystemLocal.ToString("HH:mm"),
                 };
             })
             .ToList();

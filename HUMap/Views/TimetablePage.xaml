@@ -1,19 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:HUMap.ViewModels"
-			 xmlns:m="clr-namespace:HUMap.Models"
-			 x:Class="HUMap.Views.TimetablePage"
-			 x:DataType="vm:TimetableViewModel">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HUMap.ViewModels"
+             xmlns:m="clr-namespace:HUMap.Models"
+             x:Class="HUMap.Views.TimetablePage"
+             x:DataType="vm:TimetableViewModel">
     <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
-        <CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10">
+        <CollectionView ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:TimetableItem">
                     <Frame Margin="4" Padding="12">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TimetableViewModel}}, Path=GoToDetailsCommand}" CommandParameter="{Binding .}" />
+                            <TapGestureRecognizer
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TimetableViewModel}}, Path=GoToDetailsCommand}"
+                                CommandParameter="{Binding .}" />
                         </Frame.GestureRecognizers>
-                        <Label Text="{Binding Title}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontSize="Large"
+                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                            <HorizontalStackLayout>
+<Label Text="{Binding lType}" FontSize="Small"
+                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                <Label Text="  " FontSize="Small"/>
+                                <Label Text="{Binding StartTime}" FontSize="Small"
+       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+<Label Text=" - " FontSize="Small"
+       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+<Label Text="{Binding EndTime}" FontSize="Small"
+       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                            </HorizontalStackLayout>
+                            <BoxView Color="Gray"
+         HeightRequest="2"
+         HorizontalOptions="Fill" />
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Location}" FontSize="Small"
+                                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                            </HorizontalStackLayout>
+                        </StackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

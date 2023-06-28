@@ -2,9 +2,9 @@
 
 public partial class TimetableDetailPage : ContentPage
 {
-	public TimetableDetailPage(TimetableDetailViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public TimetableDetailPage(TimetableDetailViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

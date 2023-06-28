@@ -2,9 +2,9 @@
 
 public partial class AppShell : Shell
 {
-	public AppShell()
-	{
-		InitializeComponent();
-		Routing.RegisterRoute(nameof(TimetableDetailPage), typeof(TimetableDetailPage));
-	}
+    public AppShell()
+    {
+        InitializeComponent();
+        Routing.RegisterRoute(nameof(TimetableDetailPage), typeof(TimetableDetailPage));
+    }
 }

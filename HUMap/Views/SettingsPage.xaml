@@ -4,5 +4,4 @@
 			 xmlns:vm="clr-namespace:HUMap.ViewModels"
 			 x:Class="HUMap.Views.SettingsPage"
 			 x:DataType="vm:SettingsViewModel">
-
 </ContentPage>
