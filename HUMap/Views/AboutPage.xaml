@@ -8,13 +8,19 @@
 
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="information.png"
-                   HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="UniMap" VerticalOptions="End" />
-            <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
+            <Image Source="iconmap.svg"
+                   HeightRequest="64" 
+                   />
+            <Label FontAttributes="Bold" Text="HUMap" VerticalOptions="End"  FontSize="Large"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}"/>
+            <Label Text="v1.0" VerticalOptions="End"  FontSize="Small"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}"  />
         </HorizontalStackLayout>
-        <Label Text="This app was made by Cormac McGreevy :)" />
-        <Label Text="c.d.mcgreevy-2021@hull.ac.uk" />
-        <Label Text="This app is written in XAML and C# with .NET MAUI." />
+        <Label Text="This app was made by Cormac McGreevy :)" FontSize="Small"
+               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+        <Label Text="c.d.mcgreevy-2021@hull.ac.uk" FontSize="Small"
+               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+        <Label Text="This app is written in XAML and C# with .NET MAUI." FontSize="Small"
+               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
     </VerticalStackLayout>
 </ContentPage>

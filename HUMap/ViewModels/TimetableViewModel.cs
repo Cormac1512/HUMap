@@ -4,11 +4,9 @@ public partial class TimetableViewModel : BaseViewModel
 {
     private readonly TimetableService dataService;
 
-    [ObservableProperty]
-    private bool isRefreshing;
+    [ObservableProperty] private bool isRefreshing;
 
-    [ObservableProperty]
-    private ObservableCollection<TimetableItem> items;
+    [ObservableProperty] private ObservableCollection<TimetableItem> items;
 
     public TimetableViewModel(TimetableService service)
     {
@@ -38,6 +36,11 @@ public partial class TimetableViewModel : BaseViewModel
     [RelayCommand]
     private async void GoToDetails(TimetableItem item)
     {
+        if (!item.IsNotDayOfWeekItem)
+        {
+            return;
+        }
+
         await Shell.Current.GoToAsync(nameof(TimetableDetailPage), true, new Dictionary<string, object>
         {
             { "Item", item }

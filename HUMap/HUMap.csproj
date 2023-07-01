@@ -42,12 +42,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
 	  <PackageReference Include="Ical.Net" Version="4.2.0" />
 	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.86" />
-	  <PackageReference Include="Plugin.Firebase" Version="2.0.3" />
-	  <PackageReference Include="SimpleToolkit.Core" Version="2.0.6" />
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 

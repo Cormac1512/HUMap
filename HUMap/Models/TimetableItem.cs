@@ -1,4 +1,6 @@
-﻿namespace HUMap.Models;
+﻿using Browser = Android.Provider.Browser;
+
+namespace HUMap.Models;
 
 public class TimetableItem
 {
@@ -6,8 +8,9 @@ public class TimetableItem
 
     public string Description { get; set; }
     public string lType { get; set; }
-    public string Colour { get; set; }
+    public Color Colour { get; set; } // Possible future use
     public string Location { get; set; }
     public string StartTime { get; set; }
     public string EndTime { get; set; }
+    public bool IsNotDayOfWeekItem { get; set; }
 }

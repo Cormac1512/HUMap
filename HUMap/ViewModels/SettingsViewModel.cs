@@ -2,4 +2,5 @@
 
 public partial class SettingsViewModel : BaseViewModel
 {
+    public string ICalUrl { get; set; }
 }

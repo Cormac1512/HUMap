@@ -10,7 +10,7 @@
         <CollectionView ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:TimetableItem">
-                    <Frame Margin="4" Padding="12">
+                    <Frame Margin="4" Padding="12" BackgroundColor="{Binding Colour}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TimetableViewModel}}, Path=GoToDetailsCommand}"
@@ -20,22 +20,28 @@
                             <Label Text="{Binding Title}" FontSize="Large"
                                    TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
                             <HorizontalStackLayout>
-<Label Text="{Binding lType}" FontSize="Small"
-                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
-                                <Label Text="  " FontSize="Small"/>
-                                <Label Text="{Binding StartTime}" FontSize="Small"
-       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
-<Label Text=" - " FontSize="Small"
-       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
-<Label Text="{Binding EndTime}" FontSize="Small"
-       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                <Label Text="{Binding lType}" FontSize="Small"
+                                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                <HorizontalStackLayout
+                                    IsVisible="{Binding IsNotDayOfWeekItem}">
+                                    <Label Text=" | " FontSize="Small"
+                                           TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                    <Label Text="{Binding StartTime}" FontSize="Small"
+                                           TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                    <Label Text=" - " FontSize="Small"
+                                           TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                    <Label Text="{Binding EndTime}" FontSize="Small"
+                                           TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                </HorizontalStackLayout>
                             </HorizontalStackLayout>
                             <BoxView Color="Gray"
-         HeightRequest="2"
-         HorizontalOptions="Fill" />
-                            <HorizontalStackLayout>
+                                     HeightRequest="2"
+                                     HorizontalOptions="Fill"
+                                     IsVisible="{Binding IsNotDayOfWeekItem}" />
+                            <HorizontalStackLayout IsVisible="{Binding IsNotDayOfWeekItem}">
                                 <Label Text="{Binding Location}" FontSize="Small"
-                                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
+                                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}"
+                                       LineBreakMode="WordWrap" MaxLines="3" />
                             </HorizontalStackLayout>
                         </StackLayout>
                     </Frame>
