@@ -25,9 +25,9 @@
             </maps1:MapSpan>
         </x:Arguments>
         <maps:Map.MapElements>
-            <maps:Polygon StrokeColor="#FF9900"
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
-                          FillColor="#88FF9900" ClassId="Contains Zest cafe" AutomationId="Allam Medical Building">
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Allam Medical Building">
                 <!-- Medical Main -->
                 <maps:Polygon.Geopath>
                     <sensors:Location>
@@ -56,10 +56,9 @@
                     </sensors:Location>
                 </maps:Polygon.Geopath>
             </maps:Polygon>
-            <maps:Polygon StrokeColor="#FF9900"
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
-                          FillColor="#88FF9900" ClassId="library">
-                <!-- Library -->
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Brynmor Jones Library">
                 <maps:Polygon.Geopath>
                     <sensors:Location>
                         <x:Arguments>
@@ -113,6 +112,132 @@
                         <x:Arguments>
                             <x:Double>53.77089854304381</x:Double>
                             <x:Double>-0.3696385057352556</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                          StrokeWidth="8"
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Venn">
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770099912456075</x:Double>
+                            <x:Double>-0.3691524676183295</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77006979255996</x:Double>
+                            <x:Double>-0.3683853558234443</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.76964335592254</x:Double>
+                            <x:Double>-0.36843900000490476</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.76967981721703</x:Double>
+                            <x:Double>-0.3692007473816439</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                          StrokeWidth="8"
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Cohen">
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77000479692584</x:Double>
+                            <x:Double>-0.36732722436012216</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.76996833591486</x:Double>
+                            <x:Double>-0.3664796462991499</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7695450688031</x:Double>
+                            <x:Double>-0.3665306082715374</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.76957756699102</x:Double>
+                            <x:Double>-0.3673312476798355</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                          StrokeWidth="8"
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="The Enterprise Centre">
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770729967389244</x:Double>
+                            <x:Double>-0.37134521289940986</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77070737780825</x:Double>
+                            <x:Double>-0.37072964591715046</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77052388654806</x:Double>
+                            <x:Double>-0.3708215115771752</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7706134525753</x:Double>
+                            <x:Double>-0.371014630630433</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77063960898973</x:Double>
+                            <x:Double>-0.37136398835629447</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                          StrokeWidth="8"
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Derwent">
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77031147059826</x:Double>
+                            <x:Double>-0.3705446025549541</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77027738772805</x:Double>
+                            <x:Double>-0.36992233005524405</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77001423533364</x:Double>
+                            <x:Double>-0.3699451288323648</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770050696306015</x:Double>
+                            <x:Double>-0.3706170222051577</x:Double>
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>

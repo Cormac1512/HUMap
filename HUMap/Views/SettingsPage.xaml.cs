@@ -1,4 +1,6 @@
-﻿namespace HUMap.Views;
+﻿using System.Windows.Input;
+
+namespace HUMap.Views;
 
 public partial class SettingsPage : ContentPage
 {

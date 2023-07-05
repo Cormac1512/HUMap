@@ -6,7 +6,7 @@ namespace HUMap.Views;
 
 public partial class MapPage : ContentPage
 {
-    private Polygon selected;
+    private Polygon _selected;
 
     public MapPage(MapViewModel viewModel)
     {
@@ -22,33 +22,37 @@ public partial class MapPage : ContentPage
 
     private void OnMapClicked(object sender, MapClickedEventArgs e)
     {
+        var current = _selected;
         Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
-        var polys = new List<Polygon>();
-        Map map = (Map)sender;
-        foreach (var poly in map.MapElements.OfType<Polygon>())
-        {
-            polys.Add(poly);
-        }
+        var map = (Map)sender;
+        var poly = map.MapElements.OfType<Polygon>().ToList();
 
-        foreach (var polygon in polys)
+        foreach (var polygon in from polygon in poly
+                                let polygonCoordinates = polygon.Geopath
+                                let isWithinPolygon = IsPointInPolygon(clickEventCoordinates, polygonCoordinates)
+                                where isWithinPolygon
+                                where polygon != _selected
+                                select polygon)
         {
-            var polygonCoordinates = polygon.Geopath;
-            var isWithinPolygon = IsPointInPolygon(clickEventCoordinates, polygonCoordinates);
-            if (!isWithinPolygon) continue;
-            if (polygon == selected) continue;
             polygon.FillColor = Color.FromArgb("#881BA1E2");
             polygon.StrokeColor = Color.FromArgb("#681BA1E2");
-            if (selected != null)
+            if (_selected != null)
             {
-                selected.FillColor = Color.FromArgb("#88FF9900");
-                selected.StrokeColor = Color.FromArgb("#FF9900");
+                _selected.FillColor = Color.FromArgb("#88FF9900");
+                _selected.StrokeColor = Color.FromArgb("#FF9900");
             }
-            selected = polygon;
-            DisplayAlert(selected.AutomationId, selected.ClassId, "OK");
+
+            _selected = polygon;
+            DisplayAlert(_selected.AutomationId, _selected.ClassId, "OK");
         }
+
+        if (current != _selected || _selected == null) return;
+        _selected.FillColor = Color.FromArgb("#88FF9900");
+        _selected.StrokeColor = Color.FromArgb("#FF9900");
+        _selected = null;
     }
 
-    private bool IsPointInPolygon(Location point, IList<Location> polygon)
+    private static bool IsPointInPolygon(Location point, IList<Location> polygon)
     {
         var x = point.Latitude;
         var y = point.Longitude;
