@@ -1,10 +1,9 @@
 ﻿using Microsoft.Maui.Controls.Maps;
-using Microsoft.Maui.Maps.Handlers;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace HUMap.Views;
 
-public partial class MapPage : ContentPage
+public partial class MapPage
 {
     private Polygon _selected;
 
@@ -43,7 +42,7 @@ public partial class MapPage : ContentPage
             }
 
             _selected = polygon;
-            DisplayAlert(_selected.AutomationId, _selected.ClassId, "OK");
+            DisplayAlert(_selected.ClassId, _selected.AutomationId, "OK");
         }
 
         if (current != _selected || _selected == null) return;

@@ -4,37 +4,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HUMap.ViewModels"
              x:Class="HUMap.Views.SettingsPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType="vm:SettingsViewModel">
-    <VerticalStackLayout>
-        <Label FontAttributes="Bold" Text="Instructions" FontSize="Large"
-               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-        <HorizontalStackLayout>
-            <Label Text="1. First go to " FontSize="Small"
-                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-            <Label Text="mytimetable.hull.ac.uk" VerticalOptions="End" FontSize="Small"
-                   TextColor="Blue" TextDecorations="Underline"
-                   HorizontalOptions="Center">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://mytimetable.hull.ac.uk" />
-                </Label.GestureRecognizers>
-            </Label>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-        <Label Text="2. Click the menu button in the top left " FontSize="Small"
-               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-        <Image Source="hamburger.png" />
-        </HorizontalStackLayout>
-                <Label Text="3. Click Connect to calendar app" FontSize="Small"
-               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-        <Label Text="4. Copy the link provided into the ICal URL Link box and press set" FontSize="Small"
-               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-        <Entry Text=""
-               x:Name="entry"
-               Placeholder="ICal URL Link"
-               ReturnType="Done" />
-        <Button Clicked="SetLink" Text="Set"
-                VerticalOptions="Center"
-                HeightRequest="40" />
-    </VerticalStackLayout>
+
+    <Page.Behaviors>
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
+    </Page.Behaviors>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label FontAttributes="Bold" Text="Instructions" FontSize="Large"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Label Text="1. First open the timetable here: " FontSize="Small"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <HorizontalStackLayout Margin="0,10">
+                <Label Text="mytimetable.hull.ac.uk" VerticalOptions="End" FontSize="Small"
+                       TextColor="Blue" TextDecorations="Underline"
+                       HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                              CommandParameter="https://mytimetable.hull.ac.uk" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Label Text="2. Click the menu button in the top left " FontSize="Small"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <HorizontalStackLayout Margin="0,10">
+                <Image Source="hamburger.png" WidthRequest="40" HeightRequest="40" />
+            </HorizontalStackLayout>
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Label Text="3. Click Connect to calendar app" FontSize="Small"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Label Text="4. Copy the link provided into the ICal URL Link box and press set" FontSize="Small"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Entry Text=""
+                   x:Name="entry"
+                   Placeholder="ICal URL Link"
+                   PlaceholderColor="LightGray"
+                   ReturnType="Done"
+                   Margin="0,10" />
+            <Button Clicked="SetLink" Text="Set"
+                    VerticalOptions="Center"
+                    HeightRequest="40"
+                    Margin="0,10" />
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Label Text="Show Cafe pins on map" FontSize="Small" VerticalOptions="Center"
+                       TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                <Switch IsToggled="false" OnColor="Lime" VerticalOptions="Center" IsEnabled="False" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Label Text="Show Important places on map" FontSize="Small" VerticalOptions="Center"
+                       TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                <Switch IsToggled="false" OnColor="Lime" VerticalOptions="Center" IsEnabled="False" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
