@@ -2,12 +2,18 @@
 
 public partial class TimetablePage : ContentPage
 {
-    private TimetableViewModel ViewModel;
+    private readonly TimetableViewModel ViewModel;
 
     public TimetablePage(TimetableViewModel viewModel)
     {
         InitializeComponent();
         BindingContext = ViewModel = viewModel;
         viewModel.LoadDataAsync();
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        ViewModel.LoadDataAsync();
     }
 }

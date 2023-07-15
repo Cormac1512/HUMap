@@ -30,7 +30,7 @@ public partial class TimetableViewModel : BaseViewModel
 
     public async Task LoadDataAsync()
     {
-        Items = new ObservableCollection<TimetableItem>(await dataService.GetItems());
+        Items = new ObservableCollection<TimetableItem>(await TimetableService.GetItems());
     }
 
     [RelayCommand]

@@ -4,6 +4,13 @@ namespace HUMap.Services;
 
 public class TimetableService
 {
+    /// <summary>
+    /// This method downloads a file from an URL and saves it to the given destination path.
+    /// </summary>
+    /// <param name="fileUrl">The URL of the file to download</param>
+    /// <param name="destinationPath">The path to save the downloaded file</param>
+    /// <exception cref="HttpRequestException">Thrown if the HTTP request fails</exception>
+    /// <exception cref="IOException">Thrown if an I/O error occurs</exception>
     private static async Task DownloadFile(string fileUrl, string destinationPath)
     {
         using var client = new HttpClient();
@@ -16,7 +23,11 @@ public class TimetableService
         await stream.CopyToAsync(fileStream);
     }
 
-    public async Task<IEnumerable<TimetableItem>> GetItems()
+    /// <summary>
+    /// Gets the timetable items from the calendar URL set in user preferences and downloads the calendar file if not already downloaded.
+    /// </summary>
+    /// <returns>An IEnumerable of TimetableItem objects representing the events in the calendar</returns>
+    public static async Task<IEnumerable<TimetableItem>> GetItems()
     {
         var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
         var error = false;

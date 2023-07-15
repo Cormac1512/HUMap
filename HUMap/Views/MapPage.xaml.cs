@@ -33,7 +33,7 @@ public partial class MapPage
                                 where polygon != _selected
                                 select polygon)
         {
-            polygon.FillColor = Color.FromArgb("#881BA1E2");
+            polygon.FillColor = Color.FromArgb("#881BA1E2"); //change to colours file
             polygon.StrokeColor = Color.FromArgb("#681BA1E2");
             if (_selected != null)
             {
@@ -64,11 +64,8 @@ public partial class MapPage
             var xj = polygon[j].Latitude;
             var yj = polygon[j].Longitude;
 
-            var intersect = ((yi > y) != (yj > y)) && (x < ((xj - xi) * (y - yi)) / (yj - yi) + xi);
-            if (intersect)
-            {
-                isInside = !isInside;
-            }
+            var intersect = yi > y != yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+            if (intersect) isInside = !isInside;
         }
 
         return isInside;

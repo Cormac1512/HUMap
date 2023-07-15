@@ -1,6 +1,4 @@
-﻿using Browser = Android.Provider.Browser;
-
-namespace HUMap.Models;
+﻿namespace HUMap.Models;
 
 public class TimetableItem
 {
