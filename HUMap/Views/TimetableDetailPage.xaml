@@ -1,17 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:HUMap.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HUMap.ViewModels"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-			 x:Class="HUMap.Views.TimetableDetailPage"
-			 x:DataType="vm:TimetableDetailViewModel">
+             x:Class="HUMap.Views.TimetableDetailPage"
+             x:DataType="vm:TimetableDetailViewModel">
     <Page.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
     </Page.Behaviors>
     <ScrollView>
         <VerticalStackLayout Margin="12">
             <Label Text="{Binding Item.Title}" FontSize="Header" />
             <Label Text="{Binding Item.Description}" FontSize="Default" />
+            <Button Text="View Location" Clicked="OnViewLocationClicked" BindingContext="{Binding Item}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
