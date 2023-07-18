@@ -1,28 +1,30 @@
 ﻿namespace HUMap.Views;
 
-public partial class TimetableDetailPage : ContentPage
+public sealed partial class TimetableDetailPage
 {
-    private readonly GeocodingService _geocodingService;
-
-    public TimetableDetailPage(TimetableDetailViewModel viewModel, GeocodingService geocodingService)
+    public TimetableDetailPage(TimetableDetailViewModel viewModel)
     {
         InitializeComponent();
         BindingContext = viewModel;
-        _geocodingService = geocodingService;
     }
 
     private async void OnViewLocationClicked(object sender, EventArgs e)
     {
+        var httpclient = new HttpClient();
+        var geocodingService = new GeocodingService(httpclient);
         var button = (Button)sender;
         if (button.BindingContext is not TimetableItem item) return;
         var location = item.Location;
+        location = "Hull University HU6 " + location;
         try
         {
-            var (latitude, longitude) = await _geocodingService.GetCoordinatesAsync(location);
+            var (latitude, longitude) = await geocodingService.GetCoordinatesAsync(location);
+            await Shell.Current.GoToAsync("///MapPage");
+            Debug.WriteLine(latitude);
         }
-        catch
+        catch (Exception ex)
         {
-            // ignored
+            Debug.WriteLine(ex.Message);
         }
     }
 }

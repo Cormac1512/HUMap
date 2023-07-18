@@ -36,10 +36,7 @@ public partial class TimetableViewModel : BaseViewModel
     [RelayCommand]
     private async void GoToDetails(TimetableItem item)
     {
-        if (!item.IsNotDayOfWeekItem)
-        {
-            return;
-        }
+        if (!item.IsNotDayOfWeekItem) return;
 
         await Shell.Current.GoToAsync(nameof(TimetableDetailPage), true, new Dictionary<string, object>
         {

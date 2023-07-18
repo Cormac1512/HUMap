@@ -1,6 +1,6 @@
 ﻿namespace HUMap.Views;
 
-public partial class AboutPage : ContentPage
+public sealed partial class AboutPage
 {
     public AboutPage(AboutViewModel viewModel)
     {

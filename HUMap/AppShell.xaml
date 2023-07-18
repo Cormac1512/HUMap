@@ -13,6 +13,7 @@
             Icon="iconlistdetail.png"
             ContentTemplate="{DataTemplate views:TimetablePage}" />
         <ShellContent
+            Route="MapPage"
             Title="Map"
             Icon="iconmap.png"
             ContentTemplate="{DataTemplate views:MapPage}" />

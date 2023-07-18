@@ -3,7 +3,7 @@ using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace HUMap.Views;
 
-public partial class MapPage
+public sealed partial class MapPage
 {
     private Polygon _selected;
 
@@ -11,14 +11,9 @@ public partial class MapPage
     {
         InitializeComponent();
         BindingContext = viewModel;
-#if WINDOWS
-        // Note that the map control is not supported on Windows.
-        // For more details, see https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/map?view=net-maui-7.0
-        // For a possible workaround, see https://github.com/CommunityToolkit/Maui/issues/605
-        Content = new Label() { Text = "Windows does not have a map control. 😢" };
-#endif
     }
 
+    //TODO: add onappearing to change camera location if cooridnated are saved in preferences
     private void OnMapClicked(object sender, MapClickedEventArgs e)
     {
         var current = _selected;

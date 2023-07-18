@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
+namespace HUMap.Services;
 public class GeocodingService
 {
     private readonly HttpClient _httpClient;
@@ -24,25 +24,25 @@ public class GeocodingService
         return (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
     }
 
-    private class Geocode
+    private sealed class Geocode
     {
         [JsonProperty("results")]
         public Result[] Results { get; set; }
     }
 
-    private class Result
+    private sealed class Result
     {
         [JsonProperty("geometry")]
         public Geometry Geometry { get; set; }
     }
 
-    private class Geometry
+    private sealed class Geometry
     {
         [JsonProperty("location")]
         public Location Location { get; set; }
     }
 
-    private class Location
+    private sealed class Location
     {
         [JsonProperty("lat")]
         public double Latitude { get; set; }

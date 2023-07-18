@@ -1,19 +1,19 @@
 ﻿namespace HUMap.Views;
 
-public partial class TimetablePage : ContentPage
+public sealed partial class TimetablePage
 {
-    private readonly TimetableViewModel ViewModel;
+    private readonly TimetableViewModel _viewModel;
 
     public TimetablePage(TimetableViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = ViewModel = viewModel;
+        BindingContext = _viewModel = viewModel;
         viewModel.LoadDataAsync();
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        ViewModel.LoadDataAsync();
+        _viewModel.LoadDataAsync();
     }
 }

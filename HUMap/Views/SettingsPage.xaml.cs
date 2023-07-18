@@ -1,6 +1,6 @@
 ﻿namespace HUMap.Views;
 
-public partial class SettingsPage : ContentPage
+public sealed partial class SettingsPage
 {
     private readonly SettingsViewModel _vm;
 
@@ -27,6 +27,8 @@ public partial class SettingsPage : ContentPage
         {
             _vm.ICalUrl = entry.Text;
             Preferences.Default.Set("ICalUrl", _vm.ICalUrl);
+            var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
+            if (File.Exists(filepath)) File.Delete(filepath);
             await DisplayAlert("Successful", "New URL set", "OK");
         }
         else
