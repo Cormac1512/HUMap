@@ -12,7 +12,7 @@
     <Page.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
     </Page.Behaviors>
-    <maps:Map IsZoomEnabled="True" IsScrollEnabled="True" MapType="Satellite" MapClicked="OnMapClicked" ClassId="map1" IsShowingUser="True">
+    <maps:Map IsZoomEnabled="True" IsScrollEnabled="True" MapType="Satellite" MapClicked="OnMapClicked" x:Name="map1" IsShowingUser="True">
         <x:Arguments>
             <maps1:MapSpan>
                 <x:Arguments>
@@ -30,7 +30,7 @@
         <maps:Map.MapElements>
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
-                          FillColor="{StaticResource Yellow200Accent}" ClassId="(HYMS) Allam Medical Building">
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Allam Medical Building">
                 <!-- Medical Main -->
                 <maps:Polygon.Geopath>
                     <sensors:Location>
@@ -1075,7 +1075,7 @@
             </maps:Polygon>
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
-                          FillColor="{StaticResource Yellow200Accent}" ClassId="Fenner">
+                          FillColor="{StaticResource Yellow200Accent}" ClassId="Fenner Building">
                 <maps:Polygon.Geopath>
                     <sensors:Location>
                         <x:Arguments>

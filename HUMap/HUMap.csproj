@@ -79,12 +79,12 @@
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <EnableLLVM>True</EnableLLVM>
+	  <EnableLLVM>False</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
+	  <EnableLLVM>False</EnableLLVM>
 	  <AndroidLinkTool>r8</AndroidLinkTool>
-	  <EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 </Project>

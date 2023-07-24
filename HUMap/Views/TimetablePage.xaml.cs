@@ -11,9 +11,13 @@ public sealed partial class TimetablePage
         viewModel.LoadDataAsync();
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
-        _viewModel.LoadDataAsync();
+        var lastLoadTime = DateTime.MinValue;
+        if (Preferences.ContainsKey("LastLoadTime")) lastLoadTime = Preferences.Get("LastLoadTime", DateTime.MinValue);
+        if (!((DateTime.Now - lastLoadTime).TotalHours >= 0.5)) return;
+        await _viewModel.LoadDataAsync();
+        Preferences.Set("LastLoadTime", DateTime.Now);
     }
 }

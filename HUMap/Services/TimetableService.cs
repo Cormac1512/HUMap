@@ -65,25 +65,13 @@ public class TimetableService
             if (!fileExists) return timetableItems;
         }
 
-        if (!fileExists)
-        {
-            timetableItems.Add(new TimetableItem
-            {
-                Title = "File Error",
-                lType = "The timetable file doesn't exist",
-                IsNotDayOfWeekItem = false,
-                Colour = Color.FromArgb("#FF0000")
-            });
-            return timetableItems;
-        }
-
         try
         {
             var addedDays = new HashSet<DateOnly>();
             var file = new StreamReader(filepath);
             var icsContent = await file.ReadToEndAsync();
             var today = DateOnly.FromDateTime(DateTime.Now);
-            today = today.AddDays(-300);
+            today = today.AddDays(-900);
             file.Close();
 
             var calendar = Calendar.Load(icsContent);
