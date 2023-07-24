@@ -29,7 +29,7 @@ public sealed partial class MapPage
             var location = new Location(latitude, longitude);
             var mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.07));
             _map.MoveToRegion(mapSpan);
-            PolyClick(location);
+            PolyClick(location, true);
         }
         catch
         {
@@ -39,7 +39,7 @@ public sealed partial class MapPage
         Preferences.Default.Set("location", "");
     }
 
-    private bool PolyClick(Location location)
+    private bool PolyClick(Location location, bool mapSSelect = false)
     {
         var current = _selected;
         var poly = _map.MapElements.OfType<Polygon>().ToList();
@@ -63,7 +63,7 @@ public sealed partial class MapPage
             return true;
         }
 
-        if (current != _selected || _selected == null) return false;
+        if (current != _selected || _selected == null || mapSSelect) return false;
         _selected.FillColor = Color.FromArgb("#88FF9900");
         _selected.StrokeColor = Color.FromArgb("#FF9900");
         _selected = null;

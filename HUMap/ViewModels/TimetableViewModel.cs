@@ -14,7 +14,7 @@ public partial class TimetableViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private async void OnRefreshing()
+    private async Task OnRefreshing()
     {
         IsRefreshing = true;
 

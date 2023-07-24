@@ -25,13 +25,15 @@ public sealed class GeocodingService
             sumLong += point.Longitude;
         }
 
-        var center = new Location();
-        center.Latitude = sumLat / count;
-        center.Longitude = sumLong / count;
+        var center = new Location
+        {
+            Latitude = sumLat / count,
+            Longitude = sumLong / count
+        };
         return center;
     }
 
-    public double GetDistance(double lat1, double lon1, double lat2, double lon2)
+    private static double GetDistance(double lat1, double lon1, double lat2, double lon2)
     {
         const double rEarth = 6371; // Radius of the earth in km
         var latDiff = ToRadians(lat2 - lat1);
@@ -43,7 +45,7 @@ public sealed class GeocodingService
         return rEarth * c; // Distance in km
     }
 
-    private double ToRadians(double angle)
+    private static double ToRadians(double angle)
     {
         return Math.PI * angle / 180.0;
     }
