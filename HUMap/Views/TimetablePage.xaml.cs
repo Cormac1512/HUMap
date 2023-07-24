@@ -1,13 +1,23 @@
 ﻿namespace HUMap.Views;
 
-public partial class TimetablePage : ContentPage
+public sealed partial class TimetablePage
 {
-    private TimetableViewModel ViewModel;
+    private readonly TimetableViewModel _viewModel;
 
     public TimetablePage(TimetableViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = ViewModel = viewModel;
+        BindingContext = _viewModel = viewModel;
         viewModel.LoadDataAsync();
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        var lastLoadTime = DateTime.MinValue;
+        if (Preferences.ContainsKey("LastLoadTime")) lastLoadTime = Preferences.Get("LastLoadTime", DateTime.MinValue);
+        if (!((DateTime.Now - lastLoadTime).TotalHours >= 0.5)) return;
+        await _viewModel.LoadDataAsync();
+        Preferences.Set("LastLoadTime", DateTime.Now);
     }
 }

@@ -1,6 +1,4 @@
-﻿using Browser = Android.Provider.Browser;
-
-namespace HUMap.Models;
+﻿namespace HUMap.Models;
 
 public class TimetableItem
 {
@@ -13,4 +11,6 @@ public class TimetableItem
     public string StartTime { get; set; }
     public string EndTime { get; set; }
     public bool IsNotDayOfWeekItem { get; set; }
+    public string Longitude { get; set; }
+    public string Latitude { get; set; }
 }

@@ -1,12 +1,21 @@
 ﻿using System.Net;
+using Ical.Net;
 
 namespace HUMap.Services;
 
 public class TimetableService
 {
+    /// <summary>
+    ///     This method downloads a file from an URL and saves it to the given destination path.
+    /// </summary>
+    /// <param name="fileUrl">The URL of the file to download</param>
+    /// <param name="destinationPath">The path to save the downloaded file</param>
+    /// <exception cref="HttpRequestException">Thrown if the HTTP request fails</exception>
+    /// <exception cref="IOException">Thrown if an I/O error occurs</exception>
     private static async Task DownloadFile(string fileUrl, string destinationPath)
     {
         using var client = new HttpClient();
+        client.Timeout = TimeSpan.FromSeconds(7);
         using var response = await client.GetAsync(fileUrl);
         if (response is not { StatusCode: HttpStatusCode.OK })
             throw new Exception("Error downloading file");
@@ -16,23 +25,18 @@ public class TimetableService
         await stream.CopyToAsync(fileStream);
     }
 
-    public async Task<IEnumerable<TimetableItem>> GetItems()
+    /// <summary>
+    ///     Gets the timetable items from the calendar URL set in user preferences and downloads the calendar file if not
+    ///     already downloaded.
+    /// </summary>
+    /// <returns>An IEnumerable of TimetableItem objects representing the events in the calendar</returns>
+    public static async Task<IEnumerable<TimetableItem>> GetItems()
     {
         var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
-        var error = false;
-        var fileExists = File.Exists(filepath);
         var icsKeyExists = Preferences.Default.ContainsKey("ICalUrl");
         var fileUrl = Preferences.Default.Get("ICalUrl", "");
-        try
-        {
-            await DownloadFile(fileUrl, filepath);
-        }
-        catch
-        {
-            error = true;
-        }
-
         var timetableItems = new List<TimetableItem>();
+        var fileExists = File.Exists(filepath);
         if (!icsKeyExists)
         {
             timetableItems.Add(new TimetableItem
@@ -45,16 +49,20 @@ public class TimetableService
             return timetableItems;
         }
 
-        if (!fileExists)
+        try
+        {
+            await DownloadFile(fileUrl, filepath);
+        }
+        catch
         {
             timetableItems.Add(new TimetableItem
             {
-                Title = "Error",
-                lType = "Failed first download of timetable",
+                Title = "Error downloading timetable",
+                lType = "Check your connection or settings link",
                 IsNotDayOfWeekItem = false,
                 Colour = Color.FromArgb("#FF0000")
             });
-            return timetableItems;
+            if (!fileExists) return timetableItems;
         }
 
         try
@@ -63,22 +71,11 @@ public class TimetableService
             var file = new StreamReader(filepath);
             var icsContent = await file.ReadToEndAsync();
             var today = DateOnly.FromDateTime(DateTime.Now);
-            today = today.AddDays(-300);
+            today = today.AddDays(-900);
             file.Close();
 
-            var calendar = Ical.Net.Calendar.Load(icsContent);
+            var calendar = Calendar.Load(icsContent);
             const char delimiter = '[';
-            if (error)
-            {
-                timetableItems.Add(new TimetableItem
-                {
-                    Title = "Error updating timetable",
-                    lType = "Check your connection or file link in settings",
-                    IsNotDayOfWeekItem = false,
-                    Colour = Color.FromArgb("#FF0000")
-                });
-            }
-
             foreach (var cal in calendar.Events)
             {
                 var startDay = DateOnly.FromDateTime(cal.Start.AsSystemLocal.Date);
@@ -95,10 +92,7 @@ public class TimetableService
                         IsNotDayOfWeekItem = false,
                         Colour = Color.FromArgb("#dcf2f5")
                     };
-                    if (startDay == today)
-                    {
-                        item.Title = "(Today) " + startDay.ToString("dddd");
-                    }
+                    if (startDay == today) item.Title = "(Today) " + startDay.ToString("dddd");
 
                     timetableItems.Add(item);
                 }

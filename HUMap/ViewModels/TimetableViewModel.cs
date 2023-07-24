@@ -30,16 +30,13 @@ public partial class TimetableViewModel : BaseViewModel
 
     public async Task LoadDataAsync()
     {
-        Items = new ObservableCollection<TimetableItem>(await dataService.GetItems());
+        Items = new ObservableCollection<TimetableItem>(await TimetableService.GetItems());
     }
 
     [RelayCommand]
     private async void GoToDetails(TimetableItem item)
     {
-        if (!item.IsNotDayOfWeekItem)
-        {
-            return;
-        }
+        if (!item.IsNotDayOfWeekItem) return;
 
         await Shell.Current.GoToAsync(nameof(TimetableDetailPage), true, new Dictionary<string, object>
         {

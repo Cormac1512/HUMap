@@ -1,10 +1,10 @@
-﻿global using HUMap.Models;
-global using HUMap.Services;
-global using CommunityToolkit.Mvvm.ComponentModel;
+﻿global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
+global using HUMap.Models;
+global using HUMap.Services;
 global using HUMap.ViewModels;
 global using HUMap.Views;
 global using System.Collections.ObjectModel;
 global using System.Diagnostics;
-global using System.Threading.Tasks;
 global using System.Net.Http;
+global using System.Threading.Tasks;

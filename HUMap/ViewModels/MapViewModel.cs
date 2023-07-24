@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls.Maps;
-
-namespace HUMap.ViewModels;
+﻿namespace HUMap.ViewModels;
 
 public partial class MapViewModel : BaseViewModel
 {
