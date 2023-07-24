@@ -31,6 +31,23 @@ public sealed class GeocodingService
         return center;
     }
 
+    public double GetDistance(double lat1, double lon1, double lat2, double lon2)
+    {
+        const double rEarth = 6371; // Radius of the earth in km
+        var latDiff = ToRadians(lat2 - lat1);
+        var lonDiff = ToRadians(lon2 - lon1);
+        var a = Math.Sin(latDiff / 2) * Math.Sin(latDiff / 2) +
+                Math.Cos(ToRadians(lat1)) * Math.Cos(ToRadians(lat2)) *
+                Math.Sin(lonDiff / 2) * Math.Sin(lonDiff / 2);
+        var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+        return rEarth * c; // Distance in km
+    }
+
+    private double ToRadians(double angle)
+    {
+        return Math.PI * angle / 180.0;
+    }
+
     public async Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
     {
         var location = locationStr;
@@ -51,7 +68,6 @@ public sealed class GeocodingService
 
             // If polygons has relevant property to match location
             var location1 = location;
-            foreach (var polygon in polygons) Debug.WriteLine(polygon.ClassId);
             foreach (var center in from polygon in polygons
                                    where polygon.ClassId == location1
                                    select GetPolygonCentroid(polygon))
@@ -70,7 +86,14 @@ public sealed class GeocodingService
             var json = await response.Content.ReadAsStringAsync();
             var geocode = JsonConvert.DeserializeObject<Geocode>(json);
 
-            return (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
+            var distance = GetDistance(geocode.Results[0].Geometry.Location.Latitude,
+                geocode.Results[0].Geometry.Location.Longitude, 53.7712, -0.3686); // University of Hull's coordinates
+
+            return distance > 1.60934
+                ? // 1 mile in kilometers
+                (53.77070899253233, -0.36903242714560686)
+                : // If it's more than 1 mile away, return a default coordinate
+                (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
         }
         catch
         {
