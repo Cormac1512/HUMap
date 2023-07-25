@@ -27,9 +27,11 @@ public sealed partial class SettingsPage
         {
             _vm.ICalUrl = entry.Text;
             Preferences.Default.Set("ICalUrl", _vm.ICalUrl);
+            Preferences.Set("LastLoadTime", DateTime.MinValue);
             var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
             if (File.Exists(filepath)) File.Delete(filepath);
             await DisplayAlert("Successful", "New URL set", "OK");
+            await Shell.Current.GoToAsync("///TimetablePage");
         }
         else
         {

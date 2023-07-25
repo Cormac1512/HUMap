@@ -8,7 +8,6 @@ public sealed partial class TimetablePage
     {
         InitializeComponent();
         BindingContext = _viewModel = viewModel;
-        viewModel.LoadDataAsync();
     }
 
     protected override async void OnAppearing()
