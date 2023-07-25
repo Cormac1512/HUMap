@@ -57,7 +57,7 @@ public class TimetableService
         {
             timetableItems.Add(new TimetableItem
             {
-                Title = "Error downloading timetable",
+                Title = "Error downloading timetable (1)",
                 lType = "Check your connection or settings link",
                 IsNotDayOfWeekItem = false,
                 Colour = Color.FromArgb("#FF0000")
@@ -118,7 +118,7 @@ public class TimetableService
         {
             timetableItems.Add(new TimetableItem
             {
-                Title = "Error updating timetable",
+                Title = "Error updating timetable (2)",
                 lType = "Check your connection or file link in settings",
                 IsNotDayOfWeekItem = false,
                 Colour = Color.FromArgb("#FF0000")

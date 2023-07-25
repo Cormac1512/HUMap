@@ -23,7 +23,7 @@
                         </Frame.GestureRecognizers>
                         <StackLayout>
                             <Label Text="{Binding Title}" FontSize="Large"
-                                   TextColor= "Black" />
+                                   TextColor="Black" />
                             <HorizontalStackLayout>
                                 <Label Text="{Binding lType}" FontSize="Small"
                                        TextColor="Black" />
@@ -43,11 +43,8 @@
                                      HeightRequest="2"
                                      HorizontalOptions="Fill"
                                      IsVisible="{Binding IsNotDayOfWeekItem}" />
-                            <HorizontalStackLayout IsVisible="{Binding IsNotDayOfWeekItem}">
-                                <Label Text="{Binding Location}" FontSize="Small"
-                                       TextColor="Black"
-                                       LineBreakMode="WordWrap" MaxLines="3" />
-                            </HorizontalStackLayout>
+                            <Label IsVisible="{Binding IsNotDayOfWeekItem}" Text="{Binding Location}" FontSize="Small"
+                                   TextColor="Black" MaxLines="2" />
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

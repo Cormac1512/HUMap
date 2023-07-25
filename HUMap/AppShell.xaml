@@ -10,6 +10,7 @@
     <TabBar>
         <ShellContent
             Title="Timetable"
+            Route="TimetablePage"
             Icon="iconlistdetail.png"
             ContentTemplate="{DataTemplate views:TimetablePage}" />
         <ShellContent

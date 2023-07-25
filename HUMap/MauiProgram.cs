@@ -19,7 +19,7 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
+        Preferences.Set("LastLoadTime", DateTime.MinValue);
         builder.Services.AddTransient<TimetableService>();
         builder.Services.AddTransient<TimetableDetailViewModel>();
         builder.Services.AddTransient<TimetableDetailPage>();
