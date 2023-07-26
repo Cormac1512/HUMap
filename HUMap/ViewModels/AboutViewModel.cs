@@ -1,5 +1,5 @@
 ﻿namespace HUMap.ViewModels;
 
-public partial class AboutViewModel : BaseViewModel
+public sealed partial class AboutViewModel : BaseViewModel
 {
 }

@@ -20,7 +20,7 @@ public partial class TimetableViewModel : BaseViewModel
 
         try
         {
-            await LoadDataAsync();
+            await Task.Run(() => LoadDataAsync());
         }
         finally
         {

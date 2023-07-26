@@ -5,6 +5,5 @@ global using HUMap.Services;
 global using HUMap.ViewModels;
 global using HUMap.Views;
 global using System.Collections.ObjectModel;
-global using System.Diagnostics;
 global using System.Net.Http;
 global using System.Threading.Tasks;

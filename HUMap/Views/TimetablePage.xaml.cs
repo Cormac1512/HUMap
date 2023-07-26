@@ -12,7 +12,6 @@ public sealed partial class TimetablePage
 
     protected override async void OnAppearing()
     {
-        base.OnAppearing();
         var lastLoadTime = DateTime.MinValue;
         if (Preferences.ContainsKey("LastLoadTime")) lastLoadTime = Preferences.Get("LastLoadTime", DateTime.MinValue);
         if (!((DateTime.Now - lastLoadTime).TotalHours >= 0.25)) return;

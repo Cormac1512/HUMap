@@ -1,6 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HUMap.ViewModels"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -10,11 +8,20 @@
         <toolkit:StatusBarBehavior
             StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
     </Page.Behaviors>
-    <ScrollView>
-        <VerticalStackLayout Margin="12">
-            <Label Text="{Binding Item.Title}" FontSize="Header" />
-            <Label Text="{Binding Item.Description}" FontSize="Default" />
-            <Button Text="View Location" Clicked="OnViewLocationClicked" BindingContext="{Binding Item}" />
-        </VerticalStackLayout>
-    </ScrollView>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Margin="12" VerticalOptions="Fill">
+                <Label Text="{Binding Item.Title}" FontSize="Header" />
+                <Label Text="{Binding Item.Description}" FontSize="Default" />
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <Button Grid.Row="1" Text="View Location" Clicked="OnViewLocationClicked" BindingContext="{Binding Item}" VerticalOptions="End" />
+    </Grid>
 </ContentPage>

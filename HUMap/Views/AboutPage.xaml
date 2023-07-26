@@ -8,7 +8,8 @@
              x:DataType="vm:AboutViewModel">
 
     <Page.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
     </Page.Behaviors>
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
@@ -16,15 +17,12 @@
                    HeightRequest="64" />
             <Label FontAttributes="Bold" Text="HUMap" VerticalOptions="End" FontSize="Large"
                    TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-            <Label Text="v1.0" VerticalOptions="End" FontSize="Small"
+            <Label x:Name="version" VerticalOptions="End" FontSize="Medium"
                    TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
         </HorizontalStackLayout>
         <Label Text="This app was made by Cormac McGreevy :)" FontSize="Small"
                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
         <Label Text="c.d.mcgreevy-2021@hull.ac.uk" FontSize="Small"
-               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
-        <Label Text="In the future more customization options will be added, particularly for colours."
-               FontSize="Small"
                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
     </VerticalStackLayout>
 </ContentPage>
