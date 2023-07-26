@@ -6,6 +6,11 @@ namespace HUMap.Views;
 
 public sealed partial class MapPage
 {
+    private const string SelectedColor = "#88FF9900";
+    private const string SelectedStrokeColor = "#FF9900";
+    private const string PolygonFillColor = "#881BA1E2";
+    private const string PolygonStrokeColor = "#681BA1E2";
+    private static readonly HttpClient _httpClient = new();
     private readonly Map _map;
     private Polygon _selected;
 
@@ -18,14 +23,18 @@ public sealed partial class MapPage
 
     protected override async void OnAppearing()
     {
+        base.OnAppearing();
+
         if (!Preferences.Default.ContainsKey("location")) return;
-        if (Preferences.Default.Get("location", "") == "") return;
+        var locationStr = Preferences.Default.Get("location", "");
+        if (string.IsNullOrWhiteSpace(locationStr)) return;
+
         try
         {
-            var locationStr = Preferences.Default.Get("location", "");
             var httpclient = new HttpClient();
             var geocodingService = new GeocodingService(httpclient);
             var (latitude, longitude) = await geocodingService.GetCoordinatesAsync(locationStr, _map);
+
             var location = new Location(latitude, longitude);
             var mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.07));
             _map.MoveToRegion(mapSpan);
@@ -33,7 +42,7 @@ public sealed partial class MapPage
         }
         catch
         {
-            //d
+            // handle any exceptions here
         }
 
         Preferences.Default.Set("location", "");
@@ -42,21 +51,21 @@ public sealed partial class MapPage
     private bool PolyClick(Location location, bool mapSSelect = false)
     {
         var current = _selected;
-        var poly = _map.MapElements.OfType<Polygon>().ToList();
+        var polygons = _map.MapElements.OfType<Polygon>();
 
-        foreach (var polygon in from polygon in poly
-                                let polygonCoordinates = polygon.Geopath
-                                let isWithinPolygon = IsPointInPolygon(location, polygonCoordinates)
-                                where isWithinPolygon
-                                where polygon != _selected
-                                select polygon)
+        foreach (var polygon in polygons)
         {
-            polygon.FillColor = Color.FromArgb("#881BA1E2"); //change to colours file
-            polygon.StrokeColor = Color.FromArgb("#681BA1E2");
+            var polygonCoordinates = polygon.Geopath;
+            var isWithinPolygon = IsPointInPolygon(location, polygonCoordinates);
+            if (!isWithinPolygon || polygon == _selected)
+                continue;
+
+            polygon.FillColor = Color.FromArgb(PolygonFillColor);
+            polygon.StrokeColor = Color.FromArgb(PolygonStrokeColor);
             if (_selected != null)
             {
-                _selected.FillColor = Color.FromArgb("#88FF9900");
-                _selected.StrokeColor = Color.FromArgb("#FF9900");
+                _selected.FillColor = Color.FromArgb(SelectedColor);
+                _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
             }
 
             _selected = polygon;
@@ -64,8 +73,8 @@ public sealed partial class MapPage
         }
 
         if (current != _selected || _selected == null || mapSSelect) return false;
-        _selected.FillColor = Color.FromArgb("#88FF9900");
-        _selected.StrokeColor = Color.FromArgb("#FF9900");
+        _selected.FillColor = Color.FromArgb(SelectedColor);
+        _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
         _selected = null;
         return false;
     }

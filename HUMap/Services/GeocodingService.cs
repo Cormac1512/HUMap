@@ -6,6 +6,9 @@ namespace HUMap.Services;
 
 public sealed class GeocodingService
 {
+    private const double UniversityLatitude = 53.7712;
+    private const double UniversityLongitude = -0.3686;
+    private const double OneMileInKilometers = 1.60934;
     private readonly HttpClient _httpClient;
 
     public GeocodingService(HttpClient httpClient)
@@ -52,21 +55,14 @@ public sealed class GeocodingService
 
     public async Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
     {
-        var location = locationStr;
-        try
-        {
-            location = location.Split("-")[0];
-        }
-        catch
-        {
-            //ignored
-        }
+        var location = locationStr.Trim();
+        var splitLocation = location.Split('-');
+        if (splitLocation.Length > 0) location = splitLocation[0].Trim();
 
-        location = location.Trim();
         //search through map polygons for a matching location
         if (map != null)
         {
-            var polygons = map.MapElements.OfType<Polygon>().ToList();
+            var polygons = map.MapElements.OfType<Polygon>();
 
             // If polygons has relevant property to match location
             var location1 = location;
@@ -89,17 +85,16 @@ public sealed class GeocodingService
             var geocode = JsonConvert.DeserializeObject<Geocode>(json);
 
             var distance = GetDistance(geocode.Results[0].Geometry.Location.Latitude,
-                geocode.Results[0].Geometry.Location.Longitude, 53.7712, -0.3686); // University of Hull's coordinates
+                geocode.Results[0].Geometry.Location.Longitude, UniversityLatitude, UniversityLongitude);
 
-            return distance > 1.60934
-                ? // 1 mile in kilometers
-                (53.77070899253233, -0.36903242714560686)
-                : // If it's more than 1 mile away, return a default coordinate
-                (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
+            return distance > OneMileInKilometers
+                ? (UniversityLatitude,
+                    UniversityLongitude) // If it's more than 1 mile away, return a default coordinate
+                : (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
         }
         catch
         {
-            return (53.77070899253233, -0.36903242714560686);
+            return (UniversityLatitude, UniversityLongitude);
         }
     }
 

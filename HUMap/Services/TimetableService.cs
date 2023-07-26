@@ -36,7 +36,7 @@ public sealed class TimetableService
             {
                 if (i == 2) throw;
 
-                await Task.Delay(1000); // Wait for 1 second before retrying
+                await Task.Delay(500); // Wait for 1 second before retrying
             }
     }
 
