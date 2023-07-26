@@ -7,7 +7,6 @@
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
-
 		<!-- Display name -->
 		<ApplicationTitle>HUMap</ApplicationTitle>
 
@@ -61,10 +60,13 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <RunAOTCompilation>true</RunAOTCompilation>
+	  <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+      <AndroidPackageFormat>aab</AndroidPackageFormat>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	  <AndroidLinkResources>true</AndroidLinkResources>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
@@ -78,12 +80,15 @@
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <EnableLLVM>False</EnableLLVM>
+	  <EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
-	  <EnableLLVM>False</EnableLLVM>
+      <RunAOTCompilation>true</RunAOTCompilation>
+      <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+      <EnableLLVM>True</EnableLLVM>
 	  <AndroidLinkTool>r8</AndroidLinkTool>
+	  <AndroidLinkResources>true</AndroidLinkResources>
 	</PropertyGroup>
 
 </Project>
