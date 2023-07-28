@@ -53,6 +53,11 @@ public sealed class GeocodingService
         return Math.PI * angle / 180.0;
     }
 
+    /// <summary>
+    /// </summary>
+    /// <param name="locationStr"></param>
+    /// <param name="map"></param>
+    /// <returns></returns>
     public async Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
     {
         var location = locationStr.Trim();
