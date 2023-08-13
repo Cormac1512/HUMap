@@ -28,7 +28,7 @@
                     <x:Double>0.013</x:Double>
                 </x:Arguments>
             </maps1:MapSpan>
-        </x:Arguments>
+        </x:Arguments> <!-- Default map start location -->
         <maps:Map.MapElements>
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
@@ -228,7 +228,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Allam medical -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Middleton Hall">
@@ -378,7 +378,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Middleton hall -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wolfson Building">
@@ -493,7 +493,7 @@
                     </sensors:Location>
                     
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Wolfson -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wilberforce Building">
@@ -547,7 +547,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Wilberforce -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Allam Building">
@@ -655,7 +655,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Allam building -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Hardy Building">
@@ -751,7 +751,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Hardy -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Chemistry Building">
@@ -871,7 +871,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Chemistry -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Brynmor Jones Library"
@@ -932,7 +932,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Library -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Venn Building">
@@ -962,7 +962,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Venn -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Ferens Building">
@@ -1052,7 +1052,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Ferens -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Cohen">
@@ -1082,7 +1082,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Cohen -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="The Enterprise Centre">
@@ -1160,7 +1160,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Enterprise Centre -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Westfield Court"
@@ -1221,7 +1221,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Westfield -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="The Courtyard"
@@ -1276,7 +1276,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Courtyard -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Derwent Building">
@@ -1306,7 +1306,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Derwent -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Newlands Science Park">
@@ -1348,7 +1348,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Newlands Science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Larkin Building">
@@ -1426,7 +1426,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Larkin -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Applied Science Building">
@@ -1534,7 +1534,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Applied Science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wharfe Building">
@@ -1564,7 +1564,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Wharfe -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Robert Blackburn Building"
@@ -1607,7 +1607,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- RBB -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Fenner Building">
@@ -1637,7 +1637,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Fenner -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Sport Science Lab">
@@ -1703,7 +1703,7 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Sport science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Sport Centre">
@@ -1913,7 +1913,151 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon>
+            </maps:Polygon> <!-- Sport centre -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+              StrokeWidth="8"
+              FillColor="{StaticResource Yellow200Accent}" ClassId="Student Central">
+    <maps:Polygon.Geopath>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77209830895864</x:Double>
+                <x:Double>-0.36692530624317515</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.772086420094524</x:Double>
+                <x:Double>-0.36660478226367704</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.772000423877216</x:Double>
+                <x:Double>-0.36661484054755256</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.771988534985574</x:Double>
+                <x:Double>-0.3663472901977269</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77208959045878</x:Double>
+                <x:Double>-0.3663372319138515</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77214824215329</x:Double>
+                <x:Double>-0.3662185441647567</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.772128464537445</x:Double>
+                <x:Double>-0.3657987353732746</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.772047223957294</x:Double>
+                <x:Double>-0.3657987353732746</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77204682766141</x:Double>
+                <x:Double>-0.36578666543262406</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77199768694103</x:Double>
+                <x:Double>-0.3657859948803657</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77199491286638</x:Double>
+                <x:Double>-0.3657631961035813</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.771991742495146</x:Double>
+                <x:Double>-0.3656753537577356</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.7719533017248</x:Double>
+                <x:Double>-0.3656807181758025</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77195290542799</x:Double>
+                <x:Double>-0.36569681143000327</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.771491085144646</x:Double>
+                <x:Double>-0.36575865885539144</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77151327800301</x:Double>
+                <x:Double>-0.36634606263371855</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.771543396863436</x:Double>
+                <x:Double>-0.36634338042468506</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77154815247101</x:Double>
+                <x:Double>-0.36653381726606044</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77159412331637</x:Double>
+                <x:Double>-0.36652845284799357</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77160125671889</x:Double>
+                <x:Double>-0.36667329213580024</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77174709491048</x:Double>
+                <x:Double>-0.3669723584401257</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+    </maps:Polygon.Geopath>
+</maps:Polygon> <!-- Student union  -->
+                        <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+              StrokeWidth="8"
+              FillColor="{StaticResource Yellow200Accent}" ClassId="Canham Turner">
+    <maps:Polygon.Geopath>
+        <sensors:Location>
+            <x:Arguments>
+                <x:Double>53.77209830895864</x:Double>
+                <x:Double>-0.36692530624317515</x:Double>
+            </x:Arguments>
+        </sensors:Location>
+    </maps:Polygon.Geopath>
+</maps:Polygon> <!-- Canham  -->
         </maps:Map.MapElements>
     </maps:Map>
 </ContentPage>
