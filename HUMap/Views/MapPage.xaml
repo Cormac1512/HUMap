@@ -28,7 +28,8 @@
                     <x:Double>0.013</x:Double>
                 </x:Arguments>
             </maps1:MapSpan>
-        </x:Arguments> <!-- Default map start location -->
+        </x:Arguments>
+        <!-- Default map start location -->
         <maps:Map.MapElements>
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
@@ -228,7 +229,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Allam medical -->
+            </maps:Polygon>
+            <!-- Allam medical -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Middleton Hall">
@@ -378,7 +380,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Middleton hall -->
+            </maps:Polygon>
+            <!-- Middleton hall -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wolfson Building">
@@ -491,9 +494,9 @@
                             <x:Double>-0.36691891570129137</x:Double>
                         </x:Arguments>
                     </sensors:Location>
-                    
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Wolfson -->
+            </maps:Polygon>
+            <!-- Wolfson -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wilberforce Building">
@@ -536,7 +539,7 @@
                     </sensors:Location>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.770565768644055</x:Double> 
+                            <x:Double>53.770565768644055</x:Double>
                             <x:Double>-0.3651567378378521</x:Double>
                         </x:Arguments>
                     </sensors:Location>
@@ -547,7 +550,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Wilberforce -->
+            </maps:Polygon>
+            <!-- Wilberforce -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Allam Building">
@@ -655,7 +659,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Allam building -->
+            </maps:Polygon>
+            <!-- Allam building -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Hardy Building">
@@ -751,7 +756,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Hardy -->
+            </maps:Polygon>
+            <!-- Hardy -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Chemistry Building">
@@ -871,7 +877,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Chemistry -->
+            </maps:Polygon>
+            <!-- Chemistry -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Brynmor Jones Library"
@@ -932,7 +939,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Library -->
+            </maps:Polygon>
+            <!-- Library -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Venn Building">
@@ -962,7 +970,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Venn -->
+            </maps:Polygon>
+            <!-- Venn -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Ferens Building">
@@ -1035,7 +1044,7 @@
                     </sensors:Location>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.77074472018099</x:Double> 
+                            <x:Double>53.77074472018099</x:Double>
                             <x:Double>-0.36702917821316683</x:Double>
                         </x:Arguments>
                     </sensors:Location>
@@ -1052,7 +1061,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Ferens -->
+            </maps:Polygon>
+            <!-- Ferens -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Cohen">
@@ -1082,7 +1092,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Cohen -->
+            </maps:Polygon>
+            <!-- Cohen -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="The Enterprise Centre">
@@ -1160,7 +1171,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Enterprise Centre -->
+            </maps:Polygon>
+            <!-- Enterprise Centre -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Westfield Court"
@@ -1221,7 +1233,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Westfield -->
+            </maps:Polygon>
+            <!-- Westfield -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="The Courtyard"
@@ -1276,7 +1289,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Courtyard -->
+            </maps:Polygon>
+            <!-- Courtyard -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Derwent Building">
@@ -1306,7 +1320,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Derwent -->
+            </maps:Polygon>
+            <!-- Derwent -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Newlands Science Park">
@@ -1348,7 +1363,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Newlands Science -->
+            </maps:Polygon>
+            <!-- Newlands Science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Larkin Building">
@@ -1426,7 +1442,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Larkin -->
+            </maps:Polygon>
+            <!-- Larkin -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Applied Science Building">
@@ -1534,7 +1551,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Applied Science -->
+            </maps:Polygon>
+            <!-- Applied Science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Wharfe Building">
@@ -1564,7 +1582,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Wharfe -->
+            </maps:Polygon>
+            <!-- Wharfe -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Robert Blackburn Building"
@@ -1607,7 +1626,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- RBB -->
+            </maps:Polygon>
+            <!-- RBB -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Fenner Building">
@@ -1637,7 +1657,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Fenner -->
+            </maps:Polygon>
+            <!-- Fenner -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Sport Science Lab">
@@ -1703,7 +1724,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Sport science -->
+            </maps:Polygon>
+            <!-- Sport science -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Sport Centre">
@@ -1913,439 +1935,457 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- Sport centre -->
+            </maps:Polygon>
+            <!-- Sport centre -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Student Central">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77209830895864</x:Double>
-                <x:Double>-0.36692530624317515</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772086420094524</x:Double>
-                <x:Double>-0.36660478226367704</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772000423877216</x:Double>
-                <x:Double>-0.36661484054755256</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771988534985574</x:Double>
-                <x:Double>-0.3663472901977269</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77208959045878</x:Double>
-                <x:Double>-0.3663372319138515</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77214824215329</x:Double>
-                <x:Double>-0.3662185441647567</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772128464537445</x:Double>
-                <x:Double>-0.3657987353732746</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772047223957294</x:Double>
-                <x:Double>-0.3657987353732746</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77204682766141</x:Double>
-                <x:Double>-0.36578666543262406</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77199768694103</x:Double>
-                <x:Double>-0.3657859948803657</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77199491286638</x:Double>
-                <x:Double>-0.3657631961035813</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771991742495146</x:Double>
-                <x:Double>-0.3656753537577356</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7719533017248</x:Double>
-                <x:Double>-0.3656807181758025</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77195290542799</x:Double>
-                <x:Double>-0.36569681143000327</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771491085144646</x:Double>
-                <x:Double>-0.36575865885539144</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77151327800301</x:Double>
-                <x:Double>-0.36634606263371855</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771543396863436</x:Double>
-                <x:Double>-0.36634338042468506</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77154815247101</x:Double>
-                <x:Double>-0.36653381726606044</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77159412331637</x:Double>
-                <x:Double>-0.36652845284799357</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77160125671889</x:Double>
-                <x:Double>-0.36667329213580024</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77174709491048</x:Double>
-                <x:Double>-0.3669723584401257</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-
-</maps:Polygon> <!-- Student union  -->
-                        <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77209830895864</x:Double>
+                            <x:Double>-0.36692530624317515</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772086420094524</x:Double>
+                            <x:Double>-0.36660478226367704</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772000423877216</x:Double>
+                            <x:Double>-0.36661484054755256</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771988534985574</x:Double>
+                            <x:Double>-0.3663472901977269</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77208959045878</x:Double>
+                            <x:Double>-0.3663372319138515</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77214824215329</x:Double>
+                            <x:Double>-0.3662185441647567</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772128464537445</x:Double>
+                            <x:Double>-0.3657987353732746</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772047223957294</x:Double>
+                            <x:Double>-0.3657987353732746</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77204682766141</x:Double>
+                            <x:Double>-0.36578666543262406</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77199768694103</x:Double>
+                            <x:Double>-0.3657859948803657</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77199491286638</x:Double>
+                            <x:Double>-0.3657631961035813</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771991742495146</x:Double>
+                            <x:Double>-0.3656753537577356</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7719533017248</x:Double>
+                            <x:Double>-0.3656807181758025</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77195290542799</x:Double>
+                            <x:Double>-0.36569681143000327</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771491085144646</x:Double>
+                            <x:Double>-0.36575865885539144</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77151327800301</x:Double>
+                            <x:Double>-0.36634606263371855</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771543396863436</x:Double>
+                            <x:Double>-0.36634338042468506</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77154815247101</x:Double>
+                            <x:Double>-0.36653381726606044</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77159412331637</x:Double>
+                            <x:Double>-0.36652845284799357</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77160125671889</x:Double>
+                            <x:Double>-0.36667329213580024</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77174709491048</x:Double>
+                            <x:Double>-0.3669723584401257</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Student union  -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Canham Turner">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77222032169869</x:Double>
-                <x:Double>-0.3684489227925093</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77220962175223</x:Double>
-                <x:Double>-0.36824976877177507</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772255988167146</x:Double>
-                <x:Double>-0.3682457454582249</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77224806228787</x:Double>
-                <x:Double>-0.36812303439494426</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772240136407106</x:Double>
-                <x:Double>-0.36812102273816916</x:Double>
-            </x:Arguments>
-        </sensors:Location> 
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77223062534822</x:Double>
-                <x:Double>-0.3678816355819331</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7722385512308</x:Double>
-                <x:Double>-0.36787895337289966</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772233399407305</x:Double>
-                <x:Double>-0.36778574660898705</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77216523675937</x:Double>
-                <x:Double>-0.3677964754477054</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772164047875</x:Double>
-                <x:Double>-0.3678058631793224</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77214700719541</x:Double>
-                <x:Double>-0.3678065337315808</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772135910935226</x:Double>
-                <x:Double>-0.3676087208153634</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77203842223747</x:Double>
-                <x:Double>-0.36762079075601384</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77203564816554</x:Double>
-                <x:Double>-0.36756915823211983</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7719567851863</x:Double>
-                <x:Double>-0.367580557620512</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77195797407524</x:Double>
-                <x:Double>-0.36763621345907926</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7718660331276</x:Double>
-                <x:Double>-0.36764560119076584</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77186524053241</x:Double>
-                <x:Double>-0.36763084904108184</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771719402756176</x:Double>
-                <x:Double>-0.3676462717430243</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77172019535414</x:Double>
-                <x:Double>-0.36779446379212277</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7717376325058</x:Double>
-                <x:Double>-0.3677844055082473</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77176378821974</x:Double>
-                <x:Double>-0.3683208473149387</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77175229555956</x:Double>
-                <x:Double>-0.3683235295239721</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77176101412999</x:Double>
-                <x:Double>-0.36845361666073967</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771767751205594</x:Double>
-                <x:Double>-0.36850256697560024</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-</maps:Polygon> <!-- Canham  -->
-                        <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77222032169869</x:Double>
+                            <x:Double>-0.3684489227925093</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77220962175223</x:Double>
+                            <x:Double>-0.36824976877177507</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772255988167146</x:Double>
+                            <x:Double>-0.3682457454582249</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77224806228787</x:Double>
+                            <x:Double>-0.36812303439494426</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772240136407106</x:Double>
+                            <x:Double>-0.36812102273816916</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77223062534822</x:Double>
+                            <x:Double>-0.3678816355819331</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7722385512308</x:Double>
+                            <x:Double>-0.36787895337289966</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772233399407305</x:Double>
+                            <x:Double>-0.36778574660898705</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77216523675937</x:Double>
+                            <x:Double>-0.3677964754477054</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772164047875</x:Double>
+                            <x:Double>-0.3678058631793224</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77214700719541</x:Double>
+                            <x:Double>-0.3678065337315808</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772135910935226</x:Double>
+                            <x:Double>-0.3676087208153634</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77203842223747</x:Double>
+                            <x:Double>-0.36762079075601384</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77203564816554</x:Double>
+                            <x:Double>-0.36756915823211983</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7719567851863</x:Double>
+                            <x:Double>-0.367580557620512</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77195797407524</x:Double>
+                            <x:Double>-0.36763621345907926</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7718660331276</x:Double>
+                            <x:Double>-0.36764560119076584</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77186524053241</x:Double>
+                            <x:Double>-0.36763084904108184</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771719402756176</x:Double>
+                            <x:Double>-0.3676462717430243</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77172019535414</x:Double>
+                            <x:Double>-0.36779446379212277</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7717376325058</x:Double>
+                            <x:Double>-0.3677844055082473</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77176378821974</x:Double>
+                            <x:Double>-0.3683208473149387</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77175229555956</x:Double>
+                            <x:Double>-0.3683235295239721</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77176101412999</x:Double>
+                            <x:Double>-0.36845361666073967</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771767751205594</x:Double>
+                            <x:Double>-0.36850256697560024</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Canham  -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Gulbenkian Centre">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772062218804145</x:Double>
-                <x:Double>-0.367539029057607</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77180304057745</x:Double>
-                <x:Double>-0.36757121556594824</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77172853644836</x:Double>
-                <x:Double>-0.36747331493674223</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77171426968534</x:Double>
-                <x:Double>-0.36716553145015307</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77177767748381</x:Double>
-                <x:Double>-0.3670703130294654</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772035666978724</x:Double>
-                <x:Double>-0.3670327621043842</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77210620761246</x:Double>
-                <x:Double>-0.3671092050614386</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772125229784464</x:Double>
-                <x:Double>-0.3674451517428791</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-</maps:Polygon> <!-- Gulbenkian  -->
-                                    <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772062218804145</x:Double>
+                            <x:Double>-0.367539029057607</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77180304057745</x:Double>
+                            <x:Double>-0.36757121556594824</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77172853644836</x:Double>
+                            <x:Double>-0.36747331493674223</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77171426968534</x:Double>
+                            <x:Double>-0.36716553145015307</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77177767748381</x:Double>
+                            <x:Double>-0.3670703130294654</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772035666978724</x:Double>
+                            <x:Double>-0.3670327621043842</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77210620761246</x:Double>
+                            <x:Double>-0.3671092050614386</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772125229784464</x:Double>
+                            <x:Double>-0.3674451517428791</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Gulbenkian  -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Loten Workshops">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77247604567384</x:Double>
-                <x:Double>-0.36840839591080843</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772429283209746</x:Double>
-                <x:Double>-0.3674991270484666</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77234408027763</x:Double>
-                <x:Double>-0.36751253809590806</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77234408027763</x:Double>
-                <x:Double>-0.36752460803655856</x:Double>
-            </x:Arguments>
-        </sensors:Location><sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77230207318869</x:Double>
-                <x:Double>-0.36752729024559205</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77230009172116</x:Double>
-                <x:Double>-0.3675433834997928</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.7721304777549</x:Double>
-                <x:Double>-0.36756886448556414</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77213245923041</x:Double>
-                <x:Double>-0.36760708596429087</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.772139988836486</x:Double>
-                <x:Double>-0.3676064154120325</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77215029250573</x:Double>
-                <x:Double>-0.36779282893985776</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77223549582779</x:Double>
-                <x:Double>-0.3677794178946905</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77224025135696</x:Double>
-                <x:Double>-0.3678008755669582</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77230445094921</x:Double>
-                <x:Double>-0.3677928289369898</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77233575812151</x:Double>
-                <x:Double>-0.36843186523921084</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-</maps:Polygon> <!-- loten work -->
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77247604567384</x:Double>
+                            <x:Double>-0.36840839591080843</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772429283209746</x:Double>
+                            <x:Double>-0.3674991270484666</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77234408027763</x:Double>
+                            <x:Double>-0.36751253809590806</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77234408027763</x:Double>
+                            <x:Double>-0.36752460803655856</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77230207318869</x:Double>
+                            <x:Double>-0.36752729024559205</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77230009172116</x:Double>
+                            <x:Double>-0.3675433834997928</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.7721304777549</x:Double>
+                            <x:Double>-0.36756886448556414</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77213245923041</x:Double>
+                            <x:Double>-0.36760708596429087</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.772139988836486</x:Double>
+                            <x:Double>-0.3676064154120325</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77215029250573</x:Double>
+                            <x:Double>-0.36779282893985776</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77223549582779</x:Double>
+                            <x:Double>-0.3677794178946905</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77224025135696</x:Double>
+                            <x:Double>-0.3678008755669582</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77230445094921</x:Double>
+                            <x:Double>-0.3677928289369898</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77233575812151</x:Double>
+                            <x:Double>-0.36843186523921084</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- loten work -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+              StrokeWidth="8"
+              FillColor="{StaticResource Yellow200Accent}" ClassId="Esk">
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77628449222674</x:Double>
+                            <x:Double>-0.3711874845166015</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Esk -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Sports Pavilion">
@@ -2411,7 +2451,8 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- daim -->
+            </maps:Polygon>
+            <!-- daim -->
             <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
                           StrokeWidth="8"
                           FillColor="{StaticResource Yellow200Accent}" ClassId="Data science, AI and Modelling" AutomationId="Not a car park, outdated satellite images">
@@ -2441,116 +2482,119 @@
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>
-            </maps:Polygon> <!-- daim -->
-                                                <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+            </maps:Polygon>
+            <!-- daim -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Wilberforce Carpark">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77176442297621</x:Double>
-                <x:Double>-0.36562482687323855</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77110543603098</x:Double>
-                <x:Double>-0.3657103778372407</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77104361243846</x:Double>
-                <x:Double>-0.3643545211746526</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.771706000782885</x:Double>
-                <x:Double>-0.3642718609495946</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-</maps:Polygon> <!-- Car park -->
-                                                <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77176442297621</x:Double>
+                            <x:Double>-0.36562482687323855</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77110543603098</x:Double>
+                            <x:Double>-0.3657103778372407</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77104361243846</x:Double>
+                            <x:Double>-0.3643545211746526</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.771706000782885</x:Double>
+                            <x:Double>-0.3642718609495946</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Car park -->
+            <maps:Polygon StrokeColor="{StaticResource Yellow100Accent}"
               StrokeWidth="8"
               FillColor="{StaticResource Yellow200Accent}" ClassId="Media Hub">
-    <maps:Polygon.Geopath>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.770480693083094</x:Double>
-                <x:Double>-0.3670095974734335</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.770211597263774</x:Double>
-                <x:Double>-0.3670538539229171</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77020842675698</x:Double>
-                <x:Double>-0.367015632444543</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77018108113231</x:Double>
-                <x:Double>-0.36701898520639176</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.770159283883395</x:Double>
-                <x:Double>-0.3666099483287895</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77028174464554</x:Double>
-                <x:Double>-0.3665918434178323</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77028055570784</x:Double>
-                <x:Double>-0.36663073544881736</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77038240791881</x:Double>
-                <x:Double>-0.36662067716511343</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.770382435039856</x:Double>
-                <x:Double>-0.36665086808771374</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77046883088262</x:Double>
-                <x:Double>-0.36664080980383834</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77047752259825</x:Double>
-                <x:Double>-0.3668258661561729</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-        <sensors:Location>
-            <x:Arguments>
-                <x:Double>53.77047276686942</x:Double>
-                <x:Double>-0.36682921891746473</x:Double>
-            </x:Arguments>
-        </sensors:Location>
-    </maps:Polygon.Geopath>
-</maps:Polygon> <!-- Media hub -->
+                <maps:Polygon.Geopath>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770480693083094</x:Double>
+                            <x:Double>-0.3670095974734335</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770211597263774</x:Double>
+                            <x:Double>-0.3670538539229171</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77020842675698</x:Double>
+                            <x:Double>-0.367015632444543</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77018108113231</x:Double>
+                            <x:Double>-0.36701898520639176</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770159283883395</x:Double>
+                            <x:Double>-0.3666099483287895</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77028174464554</x:Double>
+                            <x:Double>-0.3665918434178323</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77028055570784</x:Double>
+                            <x:Double>-0.36663073544881736</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77038240791881</x:Double>
+                            <x:Double>-0.36662067716511343</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.770382435039856</x:Double>
+                            <x:Double>-0.36665086808771374</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77046883088262</x:Double>
+                            <x:Double>-0.36664080980383834</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77047752259825</x:Double>
+                            <x:Double>-0.3668258661561729</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>53.77047276686942</x:Double>
+                            <x:Double>-0.36682921891746473</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                </maps:Polygon.Geopath>
+            </maps:Polygon>
+            <!-- Media hub -->
         </maps:Map.MapElements>
     </maps:Map>
 </ContentPage>

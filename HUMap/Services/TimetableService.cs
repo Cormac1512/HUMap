@@ -1,5 +1,5 @@
-﻿using System.Net;
-using Ical.Net;
+﻿using Ical.Net;
+using System.Net;
 
 namespace HUMap.Services;
 

@@ -4,6 +4,9 @@ using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace HUMap.Services;
 
+/// <summary>
+///
+/// </summary>
 public sealed class GeocodingService
 {
     private const double UniversityLatitude = 53.7712;
@@ -11,11 +14,20 @@ public sealed class GeocodingService
     private const double OneMileInKilometers = 1.60934;
     private readonly HttpClient _httpClient;
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="httpClient"></param>
     public GeocodingService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="polygon"></param>
+    /// <returns></returns>
     private static Location GetPolygonCentroid(Polygon polygon)
     {
         var sumLat = 0.0;
@@ -36,6 +48,14 @@ public sealed class GeocodingService
         return center;
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="lat1"></param>
+    /// <param name="lon1"></param>
+    /// <param name="lat2"></param>
+    /// <param name="lon2"></param>
+    /// <returns></returns>
     private static double GetDistance(double lat1, double lon1, double lat2, double lon2)
     {
         const double rEarth = 6371; // Radius of the earth in km

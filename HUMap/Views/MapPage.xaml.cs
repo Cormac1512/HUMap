@@ -6,11 +6,11 @@ namespace HUMap.Views;
 
 public sealed partial class MapPage
 {
-    private const string SelectedColor = "#88FF9900";
-    private const string SelectedStrokeColor = "#FF9900";
     private const string PolygonFillColor = "#881BA1E2";
     private const string PolygonStrokeColor = "#681BA1E2";
-    private static readonly HttpClient _httpClient = new();
+    private const string SelectedColor = "#88FF9900";
+    private const string SelectedStrokeColor = "#FF9900";
+    private static readonly HttpClient HttpClient = new();
     private readonly Map _map;
     private Polygon _selected;
 
@@ -31,8 +31,7 @@ public sealed partial class MapPage
 
         try
         {
-            var httpclient = new HttpClient();
-            var geocodingService = new GeocodingService(httpclient);
+            var geocodingService = new GeocodingService(HttpClient);
             var (latitude, longitude) = await geocodingService.GetCoordinatesAsync(locationStr, _map);
 
             var location = new Location(latitude, longitude);
@@ -46,6 +45,32 @@ public sealed partial class MapPage
         }
 
         Preferences.Default.Set("location", "");
+    }
+
+    private static bool IsPointInPolygon(Location point, IList<Location> polygon)
+    {
+        var x = point.Latitude;
+        var y = point.Longitude;
+        var isInside = false;
+
+        for (int i = 0, j = polygon.Count - 1; i < polygon.Count; j = i++)
+        {
+            var xi = polygon[i].Latitude;
+            var yi = polygon[i].Longitude;
+            var xj = polygon[j].Latitude;
+            var yj = polygon[j].Longitude;
+
+            var intersect = yi > y != yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+            if (intersect) isInside = !isInside;
+        }
+
+        return isInside;
+    }
+
+    private void OnMapClicked(object sender, MapClickedEventArgs e)
+    {
+        Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
+        if (PolyClick(clickEventCoordinates)) DisplayAlert(_selected.ClassId, _selected.AutomationId, "Ok");
     }
 
     private bool PolyClick(Location location, bool mapSSelect = false)
@@ -77,31 +102,5 @@ public sealed partial class MapPage
         _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
         _selected = null;
         return false;
-    }
-
-    private void OnMapClicked(object sender, MapClickedEventArgs e)
-    {
-        Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
-        if (PolyClick(clickEventCoordinates)) DisplayAlert(_selected.ClassId, _selected.AutomationId, "Ok");
-    }
-
-    private static bool IsPointInPolygon(Location point, IList<Location> polygon)
-    {
-        var x = point.Latitude;
-        var y = point.Longitude;
-        var isInside = false;
-
-        for (int i = 0, j = polygon.Count - 1; i < polygon.Count; j = i++)
-        {
-            var xi = polygon[i].Latitude;
-            var yi = polygon[i].Longitude;
-            var xj = polygon[j].Latitude;
-            var yj = polygon[j].Longitude;
-
-            var intersect = yi > y != yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
-            if (intersect) isInside = !isInside;
-        }
-
-        return isInside;
     }
 }
