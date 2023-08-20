@@ -365,3 +365,5 @@ HUMap/mapSign.keystore
 *.keystore
 HUMap/HUMap.csproj
 HUMap/Platforms/Android/AndroidManifest.xml
+/HUMap/mapSign.keystore
+/HUMap/Platforms/Android/AndroidManifest.xml
