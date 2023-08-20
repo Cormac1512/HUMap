@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+HUMap/mapSign.keystore
+*.keystore
+HUMap/HUMap.csproj
+HUMap/Platforms/Android/AndroidManifest.xml

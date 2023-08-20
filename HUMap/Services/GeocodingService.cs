@@ -85,42 +85,17 @@ public sealed class GeocodingService
         if (splitLocation.Length > 0) location = splitLocation[0].Trim();
 
         //search through map polygons for a matching location
-        if (map != null)
-        {
-            var polygons = map.MapElements.OfType<Polygon>();
+        if (map == null) return (UniversityLatitude, UniversityLongitude);
+        var polygons = map.MapElements.OfType<Polygon>();
 
-            // If polygons has relevant property to match location
-            var location1 = location;
-            foreach (var center in from polygon in polygons
-                                   where polygon.ClassId == location1
-                                   select GetPolygonCentroid(polygon))
-                return (center.Latitude, center.Longitude);
-        }
+        // If polygons has relevant property to match location
+        var location1 = location;
+        foreach (var center in from polygon in polygons
+                 where polygon.ClassId == location1
+                 select GetPolygonCentroid(polygon))
+            return (center.Latitude, center.Longitude);
 
-        //If it fails to find a matching polygon
-        location += ", University of Hull, Hull, United Kingdom";
-        try
-        {
-            var response = await _httpClient.GetAsync(
-                $"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key=AIzaSyDW5Rmx15kBSb0_7kKfYGka8Zsr5hX--bQ");
-
-            response.EnsureSuccessStatusCode();
-
-            var json = await response.Content.ReadAsStringAsync();
-            var geocode = JsonConvert.DeserializeObject<Geocode>(json);
-
-            var distance = GetDistance(geocode.Results[0].Geometry.Location.Latitude,
-                geocode.Results[0].Geometry.Location.Longitude, UniversityLatitude, UniversityLongitude);
-
-            return distance > OneMileInKilometers
-                ? (UniversityLatitude,
-                    UniversityLongitude) // If it's more than 1 mile away, return a default coordinate
-                : (geocode.Results[0].Geometry.Location.Latitude, geocode.Results[0].Geometry.Location.Longitude);
-        }
-        catch
-        {
-            return (UniversityLatitude, UniversityLongitude);
-        }
+        return (UniversityLatitude, UniversityLongitude);
     }
 
     private sealed class Geocode

@@ -81,26 +81,27 @@ public sealed partial class MapPage
         foreach (var polygon in polygons)
         {
             var polygonCoordinates = polygon.Geopath;
-            var isWithinPolygon = IsPointInPolygon(location, polygonCoordinates);
-            if (!isWithinPolygon || polygon == _selected)
-                continue;
-
-            polygon.FillColor = Color.FromArgb(PolygonFillColor);
-            polygon.StrokeColor = Color.FromArgb(PolygonStrokeColor);
+            if (!IsPointInPolygon(location, polygonCoordinates) || polygon == _selected) continue;
+            // Update appearance for selected and unselected polygons
             if (_selected != null)
             {
                 _selected.FillColor = Color.FromArgb(SelectedColor);
                 _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
             }
 
+            polygon.FillColor = Color.FromArgb(PolygonFillColor);
+            polygon.StrokeColor = Color.FromArgb(PolygonStrokeColor);
+
             _selected = polygon;
             return true;
         }
 
+        // If no polygon was selected or clicked on the map, reset selected polygon
         if (current != _selected || _selected == null || mapSSelect) return false;
         _selected.FillColor = Color.FromArgb(SelectedColor);
         _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
         _selected = null;
+
         return false;
     }
 }
