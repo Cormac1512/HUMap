@@ -40,7 +40,10 @@ public static class MauiProgram
         builder.Services.AddSingleton<SettingsViewModel>();
 
         builder.Services.AddSingleton<SettingsPage>();
-
+        if (!Preferences.Default.ContainsKey("firstStart"))
+        {
+            Preferences.Default.Set("firstStart", "true");
+        }
         return builder.Build();
     }
 }

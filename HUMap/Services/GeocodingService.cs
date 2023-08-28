@@ -11,16 +11,13 @@ public sealed class GeocodingService
 {
     private const double UniversityLatitude = 53.7712;
     private const double UniversityLongitude = -0.3686;
-    private const double OneMileInKilometers = 1.60934;
-    private readonly HttpClient _httpClient;
 
     /// <summary>
     ///
     /// </summary>
     /// <param name="httpClient"></param>
-    public GeocodingService(HttpClient httpClient)
+    public GeocodingService()
     {
-        _httpClient = httpClient;
     }
 
     /// <summary>
@@ -78,14 +75,14 @@ public sealed class GeocodingService
     /// <param name="locationStr"></param>
     /// <param name="map"></param>
     /// <returns></returns>
-    public async Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
+    public Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
     {
         var location = locationStr.Trim();
         var splitLocation = location.Split('-');
         if (splitLocation.Length > 0) location = splitLocation[0].Trim();
 
         //search through map polygons for a matching location
-        if (map == null) return (UniversityLatitude, UniversityLongitude);
+        if (map == null) return Task.FromResult((UniversityLatitude, UniversityLongitude));
         var polygons = map.MapElements.OfType<Polygon>();
 
         // If polygons has relevant property to match location
@@ -93,9 +90,9 @@ public sealed class GeocodingService
         foreach (var center in from polygon in polygons
                  where polygon.ClassId == location1
                  select GetPolygonCentroid(polygon))
-            return (center.Latitude, center.Longitude);
+            return Task.FromResult((center.Latitude, center.Longitude));
 
-        return (UniversityLatitude, UniversityLongitude);
+        return Task.FromResult((UniversityLatitude, UniversityLongitude));
     }
 
     private sealed class Geocode

@@ -6,11 +6,6 @@ namespace HUMap.Views;
 
 public sealed partial class MapPage
 {
-    private const string PolygonFillColor = "#881BA1E2";
-    private const string PolygonStrokeColor = "#681BA1E2";
-    private const string SelectedColor = "#88FF9900";
-    private const string SelectedStrokeColor = "#FF9900";
-    private static readonly HttpClient HttpClient = new();
     private readonly Map _map;
     private Polygon _selected;
 
@@ -24,20 +19,25 @@ public sealed partial class MapPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
+        if (Preferences.Default.Get("firstStart", "") == "true")
+        {
+            Preferences.Default.Set("firstStart", "false");
+            Task.Run(() => DisplayAlert("How to use", "Click on a building to find out the name", "Ok"));
+        }
         if (!Preferences.Default.ContainsKey("location")) return;
         var locationStr = Preferences.Default.Get("location", "");
         if (string.IsNullOrWhiteSpace(locationStr)) return;
 
         try
         {
-            var geocodingService = new GeocodingService(HttpClient);
+            var geocodingService = new GeocodingService();
             var (latitude, longitude) = await geocodingService.GetCoordinatesAsync(locationStr, _map);
-
             var location = new Location(latitude, longitude);
             var mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.07));
             _map.MoveToRegion(mapSpan);
-            PolyClick(location, true);
+            PolyClick(location);
         }
         catch
         {
@@ -46,23 +46,47 @@ public sealed partial class MapPage
 
         Preferences.Default.Set("location", "");
     }
+    private static Location GetPolygonCentroid(Polygon polygon)
+    {
+        var sumLat = 0.0;
+        var sumLong = 0.0;
+        var count = polygon.Geopath.Count;
 
+        foreach (var point in polygon.Geopath)
+        {
+            sumLat += point.Latitude;
+            sumLong += point.Longitude;
+        }
+
+        var center = new Location
+        {
+            Latitude = sumLat / count,
+            Longitude = sumLong / count
+        };
+        return center;
+    }
     private static bool IsPointInPolygon(Location point, IList<Location> polygon)
     {
         var x = point.Latitude;
         var y = point.Longitude;
         var isInside = false;
+        var lockObject = new object(); // Create an object to use for locking
 
-        for (int i = 0, j = polygon.Count - 1; i < polygon.Count; j = i++)
+        Parallel.For(0, polygon.Count, (i) =>
         {
+            var j = (i == 0) ? polygon.Count - 1 : i - 1;
             var xi = polygon[i].Latitude;
             var yi = polygon[i].Longitude;
             var xj = polygon[j].Latitude;
             var yj = polygon[j].Longitude;
 
             var intersect = yi > y != yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
-            if (intersect) isInside = !isInside;
-        }
+            if (!intersect) return;
+            lock (lockObject)
+            {
+                isInside = !isInside;
+            }
+        });
 
         return isInside;
     }
@@ -70,38 +94,47 @@ public sealed partial class MapPage
     private void OnMapClicked(object sender, MapClickedEventArgs e)
     {
         Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
-        if (PolyClick(clickEventCoordinates)) DisplayAlert(_selected.ClassId, _selected.AutomationId, "Ok");
-    }
-
-    private bool PolyClick(Location location, bool mapSSelect = false)
-    {
-        var current = _selected;
-        var polygons = _map.MapElements.OfType<Polygon>();
-
-        foreach (var polygon in polygons)
+        if (PolyClick(clickEventCoordinates))
         {
-            var polygonCoordinates = polygon.Geopath;
-            if (!IsPointInPolygon(location, polygonCoordinates) || polygon == _selected) continue;
-            // Update appearance for selected and unselected polygons
-            if (_selected != null)
-            {
-                _selected.FillColor = Color.FromArgb(SelectedColor);
-                _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
-            }
+            Task.Run(() => DisplayAlert(_selected.ClassId, _selected.AutomationId, "Ok"));
+        }
+    }
+    private readonly Dictionary<Polygon, Location> _centroidCache = new();
 
-            polygon.FillColor = Color.FromArgb(PolygonFillColor);
-            polygon.StrokeColor = Color.FromArgb(PolygonStrokeColor);
-
-            _selected = polygon;
-            return true;
+    private Location GetCachedPolygonCentroid(Polygon polygon)
+    {
+        if (_centroidCache.TryGetValue(polygon, out var cachedCentroid))
+        {
+            return cachedCentroid;
         }
 
-        // If no polygon was selected or clicked on the map, reset selected polygon
-        if (current != _selected || _selected == null || mapSSelect) return false;
-        _selected.FillColor = Color.FromArgb(SelectedColor);
-        _selected.StrokeColor = Color.FromArgb(SelectedStrokeColor);
-        _selected = null;
+        var newCentroid = GetPolygonCentroid(polygon);
+        _centroidCache[polygon] = newCentroid;
 
-        return false;
+        return newCentroid;
+    }
+    private bool PolyClick(Location location)
+    {
+        _map.Pins.Clear();
+        var polygons = _map.MapElements.OfType<Polygon>();
+        var selectedPolygon = polygons.AsParallel().FirstOrDefault(polygon => IsPointInPolygon(location, polygon.Geopath));
+
+        if (selectedPolygon == null) return false;
+        _selected = selectedPolygon;
+        var polygonCentre = GetCachedPolygonCentroid(_selected);
+        var pin = new Pin
+        {
+            Label = _selected.ClassId,
+            Type = PinType.Place,
+            Location = polygonCentre
+        };
+
+        lock (_map.Pins)
+        {
+            _map.Pins.Add(pin);
+        }
+
+        return true;
+
     }
 }
