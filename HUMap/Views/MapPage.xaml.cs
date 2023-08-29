@@ -1,4 +1,6 @@
-﻿using Microsoft.Maui.Controls.Maps;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 
@@ -6,6 +8,7 @@ namespace HUMap.Views;
 
 public sealed partial class MapPage
 {
+    private readonly Dictionary<Polygon, Location> _centroidCache = new();
     private readonly Map _map;
     private Polygon _selected;
 
@@ -14,17 +17,29 @@ public sealed partial class MapPage
         InitializeComponent();
         BindingContext = viewModel;
         _map = FindByName("map1") as Map;
+        var polygons = _map.MapElements.OfType<Polygon>();
+        Parallel.ForEach(polygons, polygon =>
+        {
+            try
+            {
+                GetCachedPolygonCentroid(polygon);
+            }
+            catch
+            {
+                //nothing
+            }
+        });
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
         if (Preferences.Default.Get("firstStart", "") == "true")
         {
+            await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             Preferences.Default.Set("firstStart", "false");
-            Task.Run(() => DisplayAlert("How to use", "Click on a building to find out the name", "Ok"));
+            DisplayAlert("How to use", "Click on a building, the name will display at the bottom of your screen", "Ok");
         }
         if (!Preferences.Default.ContainsKey("location")) return;
         var locationStr = Preferences.Default.Get("location", "");
@@ -46,6 +61,7 @@ public sealed partial class MapPage
 
         Preferences.Default.Set("location", "");
     }
+
     private static Location GetPolygonCentroid(Polygon polygon)
     {
         var sumLat = 0.0;
@@ -65,6 +81,7 @@ public sealed partial class MapPage
         };
         return center;
     }
+
     private static bool IsPointInPolygon(Location point, IList<Location> polygon)
     {
         var x = point.Latitude;
@@ -91,16 +108,6 @@ public sealed partial class MapPage
         return isInside;
     }
 
-    private void OnMapClicked(object sender, MapClickedEventArgs e)
-    {
-        Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
-        if (PolyClick(clickEventCoordinates))
-        {
-            Task.Run(() => DisplayAlert(_selected.ClassId, _selected.AutomationId, "Ok"));
-        }
-    }
-    private readonly Dictionary<Polygon, Location> _centroidCache = new();
-
     private Location GetCachedPolygonCentroid(Polygon polygon)
     {
         if (_centroidCache.TryGetValue(polygon, out var cachedCentroid))
@@ -113,6 +120,16 @@ public sealed partial class MapPage
 
         return newCentroid;
     }
+
+    private void OnMapClicked(object sender, MapClickedEventArgs e)
+    {
+        Location clickEventCoordinates = new(e.Location.Latitude, e.Location.Longitude);
+        if (PolyClick(clickEventCoordinates))
+        {
+            Toast.Make(_selected.ClassId, ToastDuration.Long, 17).Show();
+        }
+    }
+
     private bool PolyClick(Location location)
     {
         _map.Pins.Clear();
@@ -135,6 +152,5 @@ public sealed partial class MapPage
         }
 
         return true;
-
     }
 }

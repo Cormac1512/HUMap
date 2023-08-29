@@ -16,7 +16,7 @@
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-		<ApplicationVersion>6</ApplicationVersion>
+		<ApplicationVersion>7</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.3</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">28.0</SupportedOSPlatformVersion>

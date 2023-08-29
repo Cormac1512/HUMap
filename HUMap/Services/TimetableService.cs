@@ -8,39 +8,6 @@ public sealed class TimetableService
     private static readonly HttpClient Client = new() { Timeout = TimeSpan.FromSeconds(7) };
 
     /// <summary>
-    ///     This method downloads a file from an URL and saves it to the given destination path.
-    /// </summary>
-    /// <param name="fileUrl">The URL of the file to download</param>
-    /// <param name="destinationPath">The path to save the downloaded file</param>
-    /// <exception cref="HttpRequestException">Thrown if the HTTP request fails</exception>
-    /// <exception cref="IOException">Thrown if an I/O error occurs</exception>
-    private static async Task DownloadFile(string fileUrl, string destinationPath)
-    {
-        var net = Connectivity.Current.NetworkAccess;
-        if (net != NetworkAccess.Internet) throw new Exception("Network is not available");
-
-        using var response = await Client.GetAsync(fileUrl);
-        if (response is not { StatusCode: HttpStatusCode.OK }) throw new Exception("Error downloading file");
-
-        using var content = response.Content;
-        await using var stream = await content.ReadAsStreamAsync();
-
-        for (var i = 0; i < 3; i++)
-            try
-            {
-                await using var fileStream = File.Create(destinationPath);
-                await stream.CopyToAsync(fileStream);
-                break;
-            }
-            catch (IOException)
-            {
-                if (i == 2) throw;
-
-                await Task.Delay(500); // Wait for 1 second before retrying
-            }
-    }
-
-    /// <summary>
     ///     Gets the timetable items from the calendar URL set in user preferences and downloads the calendar file if not
     ///     already downloaded.
     /// </summary>
@@ -84,7 +51,7 @@ public sealed class TimetableService
         {
             var addedDays = new HashSet<DateOnly>();
             var file = new StreamReader(filepath);
-            var icsContent = await file.ReadToEndAsync();
+            var icsContent = await File.ReadAllTextAsync(filepath);
             var today = DateOnly.FromDateTime(DateTime.Now);
             file.Close();
 
@@ -147,5 +114,38 @@ public sealed class TimetableService
                 Colour = Color.FromArgb("#28C2D1")
             });
         return timetableItems;
+    }
+
+    /// <summary>
+    ///     This method downloads a file from an URL and saves it to the given destination path.
+    /// </summary>
+    /// <param name="fileUrl">The URL of the file to download</param>
+    /// <param name="destinationPath">The path to save the downloaded file</param>
+    /// <exception cref="HttpRequestException">Thrown if the HTTP request fails</exception>
+    /// <exception cref="IOException">Thrown if an I/O error occurs</exception>
+    private static async Task DownloadFile(string fileUrl, string destinationPath)
+    {
+        var net = Connectivity.Current.NetworkAccess;
+        if (net != NetworkAccess.Internet) throw new Exception("Network is not available");
+
+        using var response = await Client.GetAsync(fileUrl);
+        if (response is not { StatusCode: HttpStatusCode.OK }) throw new Exception("Error downloading file");
+
+        using var content = response.Content;
+        await using var stream = await content.ReadAsStreamAsync();
+
+        for (var i = 0; i < 3; i++)
+            try
+            {
+                await using var fileStream = File.Create(destinationPath);
+                await stream.CopyToAsync(fileStream);
+                break;
+            }
+            catch (IOException)
+            {
+                if (i == 2) throw;
+
+                await Task.Delay(500); // Wait for 0.5 seconds before retrying
+            }
     }
 }

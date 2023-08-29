@@ -66,6 +66,11 @@
                        TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Switch IsToggled="false" OnColor="Lime" VerticalOptions="Center" IsEnabled="False" />
             </HorizontalStackLayout>
+            <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
+            <Button Clicked="RequestLocation" Text="Request location permission"
+                    VerticalOptions="Center"
+                    HeightRequest="40"
+                    Margin="0,10" ClassId="locBtn" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

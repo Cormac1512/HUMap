@@ -13,6 +13,11 @@ public partial class TimetableViewModel : BaseViewModel
         dataService = service;
     }
 
+    public async Task LoadDataAsync()
+    {
+        Items = new ObservableCollection<TimetableItem>(await TimetableService.GetItems());
+    }
+
     [RelayCommand]
     public async Task OnRefreshing()
     {
@@ -26,11 +31,6 @@ public partial class TimetableViewModel : BaseViewModel
         {
             IsRefreshing = false;
         }
-    }
-
-    public async Task LoadDataAsync()
-    {
-        Items = new ObservableCollection<TimetableItem>(await TimetableService.GetItems());
     }
 
     [RelayCommand]

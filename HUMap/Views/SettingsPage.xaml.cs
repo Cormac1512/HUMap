@@ -1,4 +1,6 @@
-﻿namespace HUMap.Views;
+﻿using CommunityToolkit.Maui.Alerts;
+
+namespace HUMap.Views;
 
 public sealed partial class SettingsPage
 {
@@ -10,6 +12,11 @@ public sealed partial class SettingsPage
         BindingContext = viewModel;
         _vm = viewModel;
         if (Preferences.Default.ContainsKey("ICalUrl")) entry.Text = Preferences.Default.Get("ICalUrl", "");
+    }
+
+    private void RequestLocation(object sender, EventArgs e)
+    {
+        Permissions.RequestAsync<Permissions.LocationWhenInUse>();
     }
 
     /// <summary>
@@ -30,7 +37,7 @@ public sealed partial class SettingsPage
             Preferences.Set("LastLoadTime", DateTime.MinValue);
             var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
             if (File.Exists(filepath)) File.Delete(filepath);
-            await DisplayAlert("Successful", "New URL set", "OK");
+            await Toast.Make("New URL set").Show();
             await Shell.Current.GoToAsync("///TimetablePage");
         }
         else
