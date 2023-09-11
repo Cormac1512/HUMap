@@ -1,6 +1,6 @@
 ﻿namespace HUMap.ViewModels;
 
-[QueryProperty(nameof(item), "Item")]
+[QueryProperty(nameof(Item), "Item")]
 public partial class TimetableDetailViewModel : BaseViewModel
 {
     [ObservableProperty]

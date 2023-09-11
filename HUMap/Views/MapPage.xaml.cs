@@ -17,18 +17,6 @@ public sealed partial class MapPage
         InitializeComponent();
         BindingContext = viewModel;
         _map = FindByName("map1") as Map;
-        var polygons = _map.MapElements.OfType<Polygon>();
-        Parallel.ForEach(polygons, polygon =>
-        {
-            try
-            {
-                GetCachedPolygonCentroid(polygon);
-            }
-            catch
-            {
-                //nothing
-            }
-        });
     }
 
     protected override async void OnAppearing()
@@ -39,7 +27,7 @@ public sealed partial class MapPage
         {
             await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             Preferences.Default.Set("firstStart", "false");
-            DisplayAlert("How to use", "Click on a building, the name will display at the bottom of your screen", "Ok");
+            await DisplayAlert("How to use", "Click on a building, the name will display at the bottom of your screen", "Ok");
         }
         if (!Preferences.Default.ContainsKey("location")) return;
         var locationStr = Preferences.Default.Get("location", "");

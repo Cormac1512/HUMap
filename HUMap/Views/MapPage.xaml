@@ -111,14 +111,14 @@
                 <maps:Polygon.Geopath>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.77173505333256</x:Double>
-                            <x:Double>-0.37203512051974846</x:Double>
+                            <x:Double>53.771750729266756</x:Double>
+                            <x:Double>-0.37202780802003727</x:Double>
                         </x:Arguments>
                     </sensors:Location>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.7717098530195</x:Double>
-                            <x:Double>-0.37149861180658705</x:Double>
+                            <x:Double>53.771409911005044</x:Double>
+                            <x:Double>-0.37207608778263956</x:Double>
                         </x:Arguments>
                     </sensors:Location>
                     <sensors:Location>
@@ -129,14 +129,14 @@
                     </sensors:Location>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.771626630129916</x:Double>
-                            <x:Double>-0.3716736259460201</x:Double>
+                            <x:Double>53.77139485152963</x:Double>
+                            <x:Double>-0.3717622693257251</x:Double>
                         </x:Arguments>
                     </sensors:Location>
                     <sensors:Location>
                         <x:Arguments>
-                            <x:Double>53.771590170526295</x:Double>
-                            <x:Double>-0.3716789903640871</x:Double>
+                            <x:Double>53.77171902535915</x:Double>
+                            <x:Double>-0.37154635149853177</x:Double>
                         </x:Arguments>
                     </sensors:Location>
                 </maps:Polygon.Geopath>

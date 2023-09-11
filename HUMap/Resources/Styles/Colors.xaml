@@ -37,8 +37,8 @@
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}" />
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}" />
 
-    <Color x:Key="Yellow100Accent">#00FF9900</Color>
-    <Color x:Key="Yellow200Accent">#00FF9900</Color>
+    <Color x:Key="Yellow100Accent">#FFFF9900</Color>
+    <Color x:Key="Yellow200Accent">#FFFF9900</Color>
     <Color x:Key="Yellow300Accent">#FFE5B9</Color>
     <Color x:Key="Cyan100Accent">#28C2D1</Color>
     <Color x:Key="Cyan200Accent">#7BDDEF</Color>

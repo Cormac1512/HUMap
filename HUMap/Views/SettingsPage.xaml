@@ -46,10 +46,10 @@
                    Placeholder="ICal URL Link"
                    PlaceholderColor="LightGray"
                    ReturnType="Done"
-                   Margin="0,10" />
+                   Margin="0,10" HeightRequest="48" />
             <Button Clicked="SetLink" Text="Set"
                     VerticalOptions="Center"
-                    HeightRequest="40"
+                    HeightRequest="48"
                     Margin="0,10" />
             <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
             <HorizontalStackLayout
@@ -69,7 +69,7 @@
             <BoxView Color="Gray" HeightRequest="1" Margin="0,10" />
             <Button Clicked="RequestLocation" Text="Request location permission"
                     VerticalOptions="Center"
-                    HeightRequest="40"
+                    HeightRequest="48"
                     Margin="0,10" ClassId="locBtn" />
         </VerticalStackLayout>
     </ScrollView>
