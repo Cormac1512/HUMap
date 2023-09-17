@@ -37,6 +37,7 @@ public sealed partial class SettingsPage
             Preferences.Set("LastLoadTime", DateTime.MinValue);
             var filepath = Path.Combine(FileSystem.AppDataDirectory, "cal.ics");
             if (File.Exists(filepath)) File.Delete(filepath);
+            Preferences.Set("firstStartMain", "true");
             await Toast.Make("New URL set").Show();
             await Shell.Current.GoToAsync("///TimetablePage");
         }

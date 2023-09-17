@@ -25,7 +25,7 @@ public sealed class GeocodingService
     /// <param name="locationStr"></param>
     /// <param name="map"></param>
     /// <returns></returns>
-    public Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
+    public static Task<(double, double)> GetCoordinatesAsync(string locationStr, Map map = null)
     {
         var location = locationStr.Trim();
         var splitLocation = location.Split('-');
@@ -45,25 +45,6 @@ public sealed class GeocodingService
         return Task.FromResult((UniversityLatitude, UniversityLongitude));
     }
 
-    /// <summary>
-    ///
-    /// </summary>
-    /// <param name="lat1"></param>
-    /// <param name="lon1"></param>
-    /// <param name="lat2"></param>
-    /// <param name="lon2"></param>
-    /// <returns></returns>
-    private static double GetDistance(double lat1, double lon1, double lat2, double lon2)
-    {
-        const double rEarth = 6371; // Radius of the earth in km
-        var latDiff = ToRadians(lat2 - lat1);
-        var lonDiff = ToRadians(lon2 - lon1);
-        var a = Math.Sin(latDiff / 2) * Math.Sin(latDiff / 2) +
-                Math.Cos(ToRadians(lat1)) * Math.Cos(ToRadians(lat2)) *
-                Math.Sin(lonDiff / 2) * Math.Sin(lonDiff / 2);
-        var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-        return rEarth * c; // Distance in km
-    }
 
     /// <summary>
     ///

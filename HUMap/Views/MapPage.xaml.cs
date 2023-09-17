@@ -36,7 +36,7 @@ public sealed partial class MapPage
         try
         {
             var geocodingService = new GeocodingService();
-            var (latitude, longitude) = await geocodingService.GetCoordinatesAsync(locationStr, _map);
+            var (latitude, longitude) = await GeocodingService.GetCoordinatesAsync(locationStr, _map);
             var location = new Location(latitude, longitude);
             var mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.07));
             _map.MoveToRegion(mapSpan);
