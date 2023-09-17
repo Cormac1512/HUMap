@@ -24,7 +24,7 @@ public sealed class TimetableService
             timetableItems.Add(new TimetableItem
             {
                 Title = "Setup",
-                lType = "To use the timetable go to the settings page",
+                lType = "Click here to setup",
                 IsNotDayOfWeekItem = false,
                 Colour = Color.FromArgb("#28C2D1")
             });

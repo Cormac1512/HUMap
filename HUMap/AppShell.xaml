@@ -20,6 +20,7 @@
             ContentTemplate="{DataTemplate views:MapPage}" />
         <ShellContent
             Title="Settings"
+            Route="SettingsRoute"
             Icon="cog.png"
             ContentTemplate="{DataTemplate views:SettingsPage}" />
         <ShellContent
