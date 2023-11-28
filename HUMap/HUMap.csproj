@@ -16,7 +16,7 @@
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-		<ApplicationVersion>12</ApplicationVersion>
+		<ApplicationVersion>9</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.3</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">28.0</SupportedOSPlatformVersion>
@@ -45,10 +45,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
-	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.2" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
+	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.1" />
 	  <PackageReference Include="Ical.Net" Version="4.2.0" />
-	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.96" />
+	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
@@ -93,7 +93,7 @@
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <EnableLLVM>False</EnableLLVM>
-	  <ApplicationVersion>11</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 	  <AndroidKeyStore>True</AndroidKeyStore>
 	  <AndroidSigningStorePass>hGstrGrFr54//zfGADtq4</AndroidSigningStorePass>
 	  <AndroidSigningKeyAlias>mapsign</AndroidSigningKeyAlias>
@@ -103,7 +103,7 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
 		<AndroidLinkTool>r8</AndroidLinkTool>
-	  <ApplicationVersion>11</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 		<AndroidLinkResources>true</AndroidLinkResources>
 		<AndroidKeyStore>True</AndroidKeyStore>
 		<AndroidSigningStorePass>hGstrGrFr54//zfGADtq4</AndroidSigningStorePass>

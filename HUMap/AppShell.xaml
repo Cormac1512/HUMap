@@ -23,5 +23,9 @@
             Route="SettingsRoute"
             Icon="cog.png"
             ContentTemplate="{DataTemplate views:SettingsPage}" />
+        <ShellContent
+            Title="About"
+            Icon="information.png"
+            ContentTemplate="{DataTemplate views:AboutPage}" />
     </TabBar>
 </Shell>

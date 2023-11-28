@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HUMap.ViewModels"
+             x:Class="HUMap.Views.AboutPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="vm:AboutViewModel">
+
+    <Page.Behaviors>
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Darkprimary}}" />
+    </Page.Behaviors>
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="iconmap.svg"
+                   HeightRequest="64" />
+            <Label FontAttributes="Bold" Text="HUMap" VerticalOptions="End" FontSize="Large"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+            <Label x:Name="version" VerticalOptions="End" FontSize="Medium"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+        </HorizontalStackLayout>
+        <Label Text="This app was made by Cormac McGreevy :)" FontSize="Small"
+               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+        <Label Text="c.d.mcgreevy-2021@hull.ac.uk" FontSize="Small"
+               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Secondary}}" />
+    </VerticalStackLayout>
+</ContentPage>

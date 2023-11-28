@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cormacdev.map" android:versionCode="12" android:versionName="1.0.1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cormacdev.map" android:versionCode="9" android:versionName="1.0.1">
 	<application android:allowBackup="true" android:supportsRtl="true" android:label="HUMap" android:icon="@mipmap/ic_launcher">
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDW5Rmx15kBSb0_7kKfYGka8Zsr5hX--bQ" />
 	</application>
