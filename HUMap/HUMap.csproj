@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android34.0</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>HUMap</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -45,7 +45,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="7.0.0" />
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.1" />
 	  <PackageReference Include="Ical.Net" Version="4.2.0" />
 	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
@@ -71,46 +71,23 @@
 		<wizardVersion>v1.3.1</wizardVersion>
 		<projectType>MVVMToolkit</projectType>
 		<framework>Tabs</framework>
-		<AndroidSigningKeyStore>mapSign.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyStore>huMap.keystore</AndroidSigningKeyStore>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
-		<AndroidPackageFormat>aab</AndroidPackageFormat>
-	  <AndroidKeyStore>False</AndroidKeyStore>
-	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
-	  <AndroidKeyStore>False</AndroidKeyStore>
-	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android33.0|AnyCPU'">
-	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <EnableLLVM>False</EnableLLVM>
-	  <ApplicationVersion>4</ApplicationVersion>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
 	  <AndroidKeyStore>True</AndroidKeyStore>
-	  <AndroidSigningStorePass>hGstrGrFr54//zfGADtq4</AndroidSigningStorePass>
-	  <AndroidSigningKeyAlias>mapsign</AndroidSigningKeyAlias>
-	  <AndroidSigningKeyPass>hGstrGrFr54//zfGADtq4</AndroidSigningKeyPass>
-	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+	  <AndroidSigningStorePass>starwars</AndroidSigningStorePass>
+		<AndroidSigningKeyPass>starwars</AndroidSigningKeyPass>
+	  <AndroidSigningKeyAlias>humapkey</AndroidSigningKeyAlias>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
-		<AndroidLinkTool>r8</AndroidLinkTool>
-	  <ApplicationVersion>4</ApplicationVersion>
-		<AndroidLinkResources>true</AndroidLinkResources>
-		<AndroidKeyStore>True</AndroidKeyStore>
-		<AndroidSigningStorePass>hGstrGrFr54//zfGADtq4</AndroidSigningStorePass>
-		<AndroidSigningKeyAlias>mapsign</AndroidSigningKeyAlias>
-		<AndroidSigningKeyPass>hGstrGrFr54//zfGADtq4</AndroidSigningKeyPass>
-		<AndroidEnableProfiledAot>True</AndroidEnableProfiledAot>
-		<RunAOTCompilation>True</RunAOTCompilation>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidLinkTool>r8</AndroidLinkTool>
+		<AndroidSigningKeyPass>starwars</AndroidSigningKeyPass>
+	  <AndroidSigningStorePass>starwars</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>humapkey</AndroidSigningKeyAlias>
 	</PropertyGroup>
+
 
 </Project>
