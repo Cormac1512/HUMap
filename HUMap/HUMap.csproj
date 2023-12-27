@@ -45,10 +45,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="7.0.0" />
-	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.1" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.2" />
 	  <PackageReference Include="Ical.Net" Version="4.2.0" />
-	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
+	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.3" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
