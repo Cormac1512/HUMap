@@ -71,22 +71,13 @@
 		<wizardVersion>v1.3.1</wizardVersion>
 		<projectType>MVVMToolkit</projectType>
 		<framework>Tabs</framework>
-		<AndroidSigningKeyStore>huMap.keystore</AndroidSigningKeyStore>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
-	  <AndroidKeyStore>True</AndroidKeyStore>
-	  <AndroidSigningStorePass>starwars</AndroidSigningStorePass>
-		<AndroidSigningKeyPass>starwars</AndroidSigningKeyPass>
-	  <AndroidSigningKeyAlias>humapkey</AndroidSigningKeyAlias>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
-	  <AndroidKeyStore>True</AndroidKeyStore>
 	  <AndroidLinkTool>r8</AndroidLinkTool>
-		<AndroidSigningKeyPass>starwars</AndroidSigningKeyPass>
-	  <AndroidSigningStorePass>starwars</AndroidSigningStorePass>
-	  <AndroidSigningKeyAlias>humapkey</AndroidSigningKeyAlias>
 	</PropertyGroup>
 
 
